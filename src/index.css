@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  list-style: none;
+  /* padding-left: 0; */
+  height: 100%;
+  background-color: #282c34;
+}
+
+a{
+  border: 3px solid white;
+  text-decoration: none;
+  padding: 10px 10px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+ul.nav-links .navigationLink{
+  display: flex;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.wiki{
+  color: white;
+}
+
+
+
+
