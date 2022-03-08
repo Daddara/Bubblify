@@ -3,21 +3,30 @@ import React from "react";
 import {connect} from "react-redux";
 // import "./styles.css";
 // import { Redirect } from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import { getBubbles } from "../../actions/getBubblesAction";
 
 
 class Bubbles extends React.Component{
 
-
-render() {
-  return(
-<div className="bubbles">
-    <p>Bubbles are fun!</p>
-</div>
+  state = {
+    bubbles: this.props.bubbles
+  }
 
 
-  )
 
-}
+  render() {
+    // const bubbles = useSelector(state => state.bubbles);
+    console.log(this.state.bubbles);
+    return(
+  <div className="bubbles">
+      <p>Bubbles are fun!</p>
+  </div>
+
+
+    )
+
+  }
 }
 // const mapStateToProps = (state) => {
 //   return {boss: state.boss}
@@ -29,4 +38,13 @@ render() {
 // }
 
 // export default connect(mapStateToProps, mapDispatchToProps) (Boss);
-export default Bubbles;
+
+const mapStateToProps = (state) => {
+  return {bubbles: state.bubbles}
+}
+
+const mapDispatchToProps = {
+  getBubbles,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Bubbles);

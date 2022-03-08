@@ -9,9 +9,9 @@ const NavLinks = () => {
         <li>
             <NavLink
                 className="navbar-item"
-                activeClassName="is-active"
+                // activeClassName="is-active"
                 to="/bubbles"
-                exact>
+                exact="true">
             Products
             </NavLink>
             {/* <a href="#">Home</a> */}
@@ -21,7 +21,7 @@ const NavLinks = () => {
                 className="navbar-item"
                 // activeClassName="is-active"
                 to="/"
-                exact>
+                exact="true">
                 Bundles
             </NavLink>
         </li>
@@ -30,7 +30,7 @@ const NavLinks = () => {
                 className="createboss"
                 // activeClassName="is-active"
                 to="/"
-                exact>
+                exact="true">
                 About Us
             </NavLink>
         </li>
@@ -39,7 +39,7 @@ const NavLinks = () => {
                 className="createboss"
                 // activeClassName="is-active"
                 to="/"
-                exact>
+                exact="true">
                 Cart
             </NavLink>
         </li>
