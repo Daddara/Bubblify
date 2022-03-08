@@ -1,1 +1,3 @@
 export const GET_BUBBLES = 'GET_BUBBLES';
+export const GET_SINGLE_BUBBLE = "GET_SINGLE_BUBBLE";
+export const GET_BUNDLES = 'GET_BUNDLES';
