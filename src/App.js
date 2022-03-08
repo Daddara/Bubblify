@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Bubbles from './components/Bubbles';
+import Bundles from './components/Bundles';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
 import { getBubbles } from './actions/getBubblesAction';
@@ -45,6 +46,7 @@ function App() {
       <Routes>
       <Route exact path="/" element={ <Main/> }/>
       <Route exact path="/bubbles" element={ <Bubbles/> }/>
+      <Route exact path="/bundles" element={ <Bundles/> }/>
       </Routes>
     </div>
   );
