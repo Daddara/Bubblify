@@ -1,14 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import "./styles.css";
+import cart from "./../../whitecart.png";
+import logo from "./../../logo.PNG"
 const NavLinks = () => {
     return(
           
     <ul className="nav-links">
-        <li><h1 className="wiki">Bubblify</h1></li>
+        <li><img className="logo" src={logo}></img></li>
+        <li className="title"><h1 className="wiki"></h1></li>
         <li>
             <NavLink
-                className="navbar-item"
+                className="products navbar-item"
                 // activeClassName="is-active"
                 to="/bubbles"
                 exact="true">
@@ -18,7 +21,7 @@ const NavLinks = () => {
         </li>
         <li>
             <NavLink
-                className="navbar-item"
+                className="bundles navbar-item"
                 // activeClassName="is-active"
                 to="/"
                 exact="true">
@@ -27,7 +30,7 @@ const NavLinks = () => {
         </li>
         <li>
             <NavLink
-                className="createboss"
+                className="about navbar-item"
                 // activeClassName="is-active"
                 to="/"
                 exact="true">
@@ -36,11 +39,11 @@ const NavLinks = () => {
         </li>
         <li>
             <NavLink
-                className="createboss"
+                className="cart navbar-item"
                 // activeClassName="is-active"
                 to="/"
                 exact="true">
-                Cart
+                <img className="cart" src={cart}></img>
             </NavLink>
         </li>
     </ul>

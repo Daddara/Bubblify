@@ -1,0 +1,44 @@
+.nav-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    background-color: #4e4e4d;
+    grid-template-areas:"logo items items items items";
+    margin-top:0;
+}
+.logo{
+    height:5rem;
+    grid-area:"logo";
+}
+.wiki{
+    color:white;
+    top:0;
+    vertical-align: center;
+    left:0;
+}
+.title{
+    right:0;
+}
+.navbar-item{
+    grid-area:"items";
+    text-decoration: none;
+    color:white;
+
+}
+.products{
+
+}
+.bundles{
+
+}
+.about{
+
+}
+
+.cart{
+    height:2rem;
+    grid-column: 4/5;
+}
