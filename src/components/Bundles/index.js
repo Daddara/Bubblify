@@ -28,15 +28,16 @@ class Bundles extends React.Component{
 
   addToCart(e, bundle){
     e.preventDefault();
-    console.log("Adding to cart..", e);
-    console.log(bundle);
-    if(localStorage.getItem('data') == null){
-        localStorage.setItem('data', '[]');
+    console.log("Adding to cart..");
+    // Check if cart exists, otherwise create a new array for cart
+    if(localStorage.getItem('cart') == null){
+        localStorage.setItem('cart', '[]');
     }
-    var prevData = JSON.parse(localStorage.getItem('data'));
+    
+    var prevData = JSON.parse(localStorage.getItem('cart'));
     prevData.push(bundle);
-    localStorage.setItem('data', JSON.stringify(prevData));
-    console.log(localStorage.getItem('data'));
+    localStorage.setItem('cart', JSON.stringify(prevData));
+    console.log(localStorage.getItem('cart'));
   }
 
   render() {
