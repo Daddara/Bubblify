@@ -7,8 +7,7 @@ const NavLinks = () => {
     return(
           
     <ul className="nav-links">
-        <li><img className="logo" src={logo}></img></li>
-        <li className="title"><h1 className="wiki"></h1></li>
+        <li className="logoContainer"><img className="logo" src={logo}></img><h1 className="title">Bubblify</h1></li>
         <li>
             <NavLink
                 className="products navbar-item"

@@ -12,16 +12,22 @@
 .logo{
     height:5rem;
     grid-area:"logo";
-}
-.wiki{
-    color:white;
-    top:0;
-    vertical-align: center;
-    left:0;
+    transform: scale(1.4);
+    
 }
 .title{
+    grid-area:"title";
+    color:white;
     right:0;
+    
 }
+.logoContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "logo title";
+    
+}
+
 .navbar-item{
     grid-area:"items";
     text-decoration: none;

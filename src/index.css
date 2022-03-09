@@ -14,14 +14,14 @@ code {
 
 
 
-/* 
-ul{
+
+/* ul{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
   list-style: none;
-  /* padding-left: 0;
+   padding-left: 0;
   height: 100%;
   background-color: #282c34;
 }
@@ -46,12 +46,4 @@ ul.nav-links .navigationLink{
 
 .wiki{
   color: white;
-<<<<<<< HEAD
-}
-
-
-
- */
-=======
-}
->>>>>>> 953364d88d13747f342c515b9cc59f68810ebfd8
+} */
