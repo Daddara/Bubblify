@@ -23,7 +23,7 @@ const NavLinks = () => {
             <NavLink
                 className="bundles navbar-item"
                 // activeClassName="is-active"
-                to="/"
+                to="/bundles"
                 exact="true">
                 Bundles
             </NavLink>
