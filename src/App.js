@@ -7,6 +7,8 @@ import Bundles from './components/Bundles';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
 import { getBubbles } from './actions/getBubblesAction';
+import { getBubble } from './actions/getSingleBubbleAction';
+import { getBundles } from './actions/getBundlesAction';
 import { useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -16,10 +18,25 @@ function App() {
 	const bubbles = useSelector(state => state.bubbles);
     const onRefresh = React.useCallback(async () => {
 		await dispatch(getBubbles());
+    // await dispatch(getBubbles());
 	  }, [bubbles]);
-    useEffect(()=>{
+    
+    const bubble = useSelector(state => state.bubble);
+    const singleBubble = React.useCallback(async () => {
+		await dispatch(getBubble(1));
+    // await dispatch(getBubbles());
+	  }, [bubble]);
 
+    const bundles = useSelector(state => state.bundles);
+    const bundleGetter = React.useCallback(async () => {
+		await dispatch(getBundles());
+    // await dispatch(getBubbles());
+	  }, [bundles]);
+
+    useEffect(()=>{
         onRefresh();
+        singleBubble();
+        bundleGetter();
         }, []);
   
   return (
