@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 class DeliverCheckout extends React.Component{
     render(){
         return(
-            // Store Pickup or Delivered
+            // Render a form
             <div>DeliverCheckout
             </div>
         )
