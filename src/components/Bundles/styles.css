@@ -12,6 +12,14 @@
     
 }
 
+.h1Bundles{
+    text-align: center;
+}
+
+.bundleName{
+    text-align: center;
+}
+
 .bundle{
     display: grid;
     grid-template-rows: 0.2fr 1fr;

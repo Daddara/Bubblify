@@ -19,7 +19,8 @@ class BubbleDetails extends React.Component{
     }
     
       render() {
-          console.log(this);
+          console.log(this.props.state);
+        
 
           //let bubble =  this.props.location.bubble;
         // const bubbles = useSelector(state => state.bubbles);

@@ -4,6 +4,10 @@ import {Routes, Route} from 'react-router-dom';
 import Bubbles from './components/Bubbles';
 import BubbleDetails from './components/BubbleDetails';
 import Bundles from './components/Bundles';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import StoreCheckout from './components/StoreCheckout';
+import DeliverCheckout from './components/DeliverCheckout';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
 import { getBubbles } from './actions/getBubblesAction';
@@ -48,7 +52,12 @@ function App() {
       <Route exact path="/" element={ <Main/> }/>
       <Route exact path="/bubbles" element={ <Bubbles/> }/>
       <Route exact path='/bubbles/:bubbleId' element={ <BubbleDetails/> }/>
+      {/* <Route exact path='/bubbledetails' element={ <BubbleDetails/> }/> */}
       <Route exact path="/bundles" element={ <Bundles/> }/>
+      <Route exact path="/cart" element={ <Cart/> }/>
+      <Route exact path="/cart/checkout" element={ <Checkout/> }/>
+      <Route exact path="/cart/checkout/deliver" element={ <DeliverCheckout/> }/>
+      <Route exact path="/cart/checkout/pickup" element={ <StoreCheckout/> }/>
       </Routes>
     </div>
   );
