@@ -1,0 +1,33 @@
+.aboutContainer{
+    margin:4rem;
+    padding:4rem;
+    padding-top:2rem;
+    height:80%;
+    background-color: rgb(233, 232, 232);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.aboutHeader{
+display:grid;
+grid-template-columns : 1fr 1fr 1fr 1fr;
+grid-template-areas: "aboutTitle . . aboutImg";
+}
+
+.aboutTitle{
+    color:black;
+    grid-area:aboutTitle;
+    padding-top: 5rem;
+}
+
+.aboutImg{
+height:10rem;
+    grid-area:aboutImg; 
+}
+
+/* .aboutTextContainer{
+
+} */
+
+.aboutText{
+
+}

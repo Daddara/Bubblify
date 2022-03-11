@@ -10,8 +10,9 @@
     margin-top:0;
 }
 .logo{
-    height:4rem;
+    height:5rem;
     grid-area:"logo";
+    transform: scale(1.4);
     
 }
 .title{

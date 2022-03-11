@@ -31,7 +31,7 @@ const NavLinks = () => {
             <NavLink
                 className="about navbar-item"
                 // activeClassName="is-active"
-                to="/"
+                to="/about"
                 exact>
                 About Us
             </NavLink>

@@ -11,6 +11,7 @@ import DeliverCheckout from './components/DeliverCheckout';
 import OrderReview from './components/OrderReview';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
+import About from './components/About';
 import { getBubbles } from './actions/getBubblesAction';
 import { getBubble } from './actions/getSingleBubbleAction';
 import { getBundles } from './actions/getBundlesAction';
@@ -54,7 +55,9 @@ function App() {
       <Route exact path="/bubbles" component={ Bubbles }/>
       <Route exact path='/bubbles/:bubbleId' component={ BubbleDetails }/>
       {/* <Route exact path='/bubbledetails' element={ <BubbleDetails/> }/> */}
+      
       <Route exact path="/bundles" component={ Bundles }/>
+      <Route exact path="/about" component={ About }/>
       <Route exact path="/cart" component={ Cart }/>
       <Route exact path="/cart/checkout" component={ Checkout }/>
       <Route exact path="/cart/checkout/deliver" component={ DeliverCheckout }/>
