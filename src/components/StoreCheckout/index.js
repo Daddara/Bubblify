@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import toastr from 'toastr';
 import Form from '../Form';
 import Input from '../Input';
@@ -9,15 +9,12 @@ class StoreCheckout extends React.Component{
     state = {
         redirect: false,
         fields: {
-          id : 0,
           name: '',
-          description: '',
-          url: '',
+          telephone: ''
         },
         errors: {
           nameError: '',
-          descriptionError: '',
-          urlError: '',
+          telephoneError: '',
         },
       }
     
@@ -29,12 +26,11 @@ class StoreCheckout extends React.Component{
       }
     
       validateForm() {
-        const { name, description, url } = this.state.fields;
+        const { name, telephone } = this.state.fields;
         const errors = {};
     
-        if (name === '') { errors.nameError = 'Boss name is required.'; }
-        if (description === '') { errors.descriptionError = 'Description is required.'; }
-        if (url === '') { errors.urlError = 'Image url is required.'; }
+        if (name === '') { errors.nameError = 'Name is required.'; }
+        if (telephone === '') { errors.telephoneError = 'Telephone is required.'; }
         if (Object.keys(errors).length > 0) {
           this.setState({ ...this.state.errors, errors });
           return false;
@@ -44,22 +40,12 @@ class StoreCheckout extends React.Component{
       }
     
       submitForm(e) {
+        console.log(this);
         e.preventDefault();
         if (!this.validateForm()) {
-          toastr.error('The form was not successfully submitted!', 'Failed!');
+          toastr.error('Please enter the reqiured fields', 'Failed!');
         } else {
-          let arr = this.props.bosses.data;
-          const ids = arr.map(object => {
-            return object.id;
-          });
-          const max = Math.max(...ids);
-          const data = this.state.fields;
-          const newId = max + 1;
-          data.id = newId;
-          data['img'] = data['url'];
-          delete data['url'];
-          this.props.createBoss(data);
-          // Send data to api and redux store
+          // TODO: SAVE INFO
           toastr.success('The form was successfully submitted!', 'Success!');
           this.setState({ redirect: true });
           // Redirect
@@ -68,13 +54,13 @@ class StoreCheckout extends React.Component{
 
     render(){
         
-        const { name, description, url} = this.state.fields;
-        const { nameError, descriptionError, urlError } = this.state.errors;
+        const { name, telephone} = this.state.fields;
+        const { nameError, telephoneError } = this.state.errors;
 
         return(
             // Render a form
             <>
-                <h1>Create a new boss</h1>
+                <h1>Contact information</h1>
         <Form onSubmit={ e => this.submitForm(e) }>
           <Input
             type="text"
@@ -86,27 +72,20 @@ class StoreCheckout extends React.Component{
             onInput={ e => this.onInput(e) }/>
           <Input
             type="text"
-            value={ description }
-            name="description"
-            htmlId="description"
-            label="Enter description: "
-            errorMessage={ descriptionError }
-            onInput={ e => this.onInput(e) }/>
-          <Input
-            type="text"
-            value={ url }
-            name="url"
-            htmlId="url"
-            label="Enter photo url: "
-            errorMessage={ urlError }
+            value={ telephone }
+            name="telephone"
+            htmlId="telephone"
+            label="Enter telephone: "
+            errorMessage={ telephoneError }
             onInput={ e => this.onInput(e) }/>
           <input
             type="submit"
-            value="Create Boss"
+            value="Submit"
             className="btn"
             // style={{ float: 'right', marginTop: '10' }} 
             />
         </Form>
+        { this.state.redirect ? (<Redirect push to="/order"/>) : null }
             </>
         )
     }

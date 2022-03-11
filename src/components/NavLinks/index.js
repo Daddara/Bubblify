@@ -13,7 +13,7 @@ const NavLinks = () => {
                 className="products navbar-item"
                 // activeClassName="is-active"
                 to="/bubbles"
-                exact="true">
+                exact>
             Products
             </NavLink>
             {/* <a href="#">Home</a> */}
@@ -23,7 +23,7 @@ const NavLinks = () => {
                 className="bundles navbar-item"
                 // activeClassName="is-active"
                 to="/bundles"
-                exact="true">
+                exact>
                 Bundles
             </NavLink>
         </li>
@@ -32,7 +32,7 @@ const NavLinks = () => {
                 className="about navbar-item"
                 // activeClassName="is-active"
                 to="/"
-                exact="true">
+                exact>
                 About Us
             </NavLink>
         </li>
@@ -41,7 +41,7 @@ const NavLinks = () => {
                 className="cart navbar-item"
                 // activeClassName="is-active"
                 to="/cart"
-                exact="true">
+                exact>
                 <img className="cart" src={cart}></img>
             </NavLink>
         </li>

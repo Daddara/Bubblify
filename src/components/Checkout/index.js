@@ -12,14 +12,14 @@ class Checkout extends React.Component{
                 className="checkoutbtnopt"
                 // activeClassName="is-active"
                 to="/cart/checkout/deliver"
-                exact="true">
+                exact>
             Delivered
             </NavLink>
             <NavLink
                 className="checkoutbtnopt"
                 // activeClassName="is-active"
                 to="/cart/checkout/pickup"
-                exact="true">
+                exact>
             Pickup
             </NavLink>
             </div>
