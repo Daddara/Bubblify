@@ -1,56 +1,53 @@
 import React from "react";
 import { NavLink, useLocation } from 'react-router-dom';
-import "./styles.css";
+import "./detailstyles.css";
 
+
+
+//This needs work
+
+// addToCart(e, bubble);{
+//     e.preventDefault();
+//     console.log("Adding to cart..");
+//     // Check if cart exists, otherwise create a new array for cart
+//     if(localStorage.getItem('cart') == null){
+//         localStorage.setItem('cart', '[]');
+//     }
+//     var prevData = JSON.parse(localStorage.getItem('cart'));
+//     var the_bubble = {"bubble" : bubble}
+//     prevData.push(the_bubble);
+//     localStorage.setItem('cart', JSON.stringify(prevData));
+//     console.log(localStorage.getItem('cart'));
+//   }
 
 
 const BubbleDetails =() =>{
     const location = useLocation();
     console.log(location);
-    // state = {
-    //     bubble: this.props.location.bubble
-    //   }
-    // constructor(props){
-    //     super(props);
-    //     console.log(props);
-    // }
     
-        
 
-          //let bubble =  this.props.location.bubble;
-        // const bubbles = useSelector(state => state.bubbles);
-        return (
-            <div className = "AllBubbles">
-            Hello
-                        {/* <div key={bubble.id} className="Bubbles">
-                            <div>
-                                <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
-                            </div>
-                            <div>
-                                <h1 className="Heading">{bubble.name}</h1>
-                            </div>
-                            <div>
-                                <p className="BubbleDetails">{bubble.description}</p>
-                                <p className="BubblePrice">Price: {bubble.price} kr</p>
+    let bubble = location.state.bubble;
 
-                            </div>
-                            <button className="CartButton" onClick={() => this.addToLocalStorage(bubble)}>Add to cart</button> */}
-                        {/* </div> */}
+    return (
+        <div className = "Bubble">
+            <div key={bubble.id} className="Details">
+                <div>
+                    <img className="Img" src={bubble.image} alt={bubble.name} />
+                </div>
+                <div>
+                    <div className="Heading">
+                        <h2>{bubble.name}</h2>
+                    </div>
+                <div>
+                    <p className="BubbleDetails">{bubble.description}</p>
+                    <p className="BubblePrice">Price: {bubble.price} kr</p>
+                </div>
+                    <button className="CartButton" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>                
+                </div>
             </div>
-                        )
-            
+        </div>
+        )      
     }
 
-
-
-// BubblesDetails.propTypes = {
-
-//     bubble: propTypes.shape({
-//         name: propTypes.string,
-//         description: propTypes.string,
-//         price: propTypes.number,
-//         image: propTypes.string
-//     })
-// }
 
 export default BubbleDetails;
