@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import "./styles.css";
 // import { Redirect } from 'react-router-dom';
 import { getBundles } from '../../actions/getBundlesAction';
+import { incrementCounter} from '../../actions/getCartAction';
 
 
 class Bundles extends React.Component{
@@ -28,6 +29,8 @@ class Bundles extends React.Component{
 
   addToCart(e, bundle){
     e.preventDefault();
+    this.props.incrementCounter(1);
+    console.log(this.props.counter);
     console.log("Adding to cart..");
     // Check if cart exists, otherwise create a new array for cart
     if(localStorage.getItem('cart') == null){
@@ -132,11 +135,12 @@ class Bundles extends React.Component{
 // export default connect(mapStateToProps, mapDispatchToProps) (bundle);
 
 const mapStateToProps = (state) => {
-  return {bundles: state.bundles, bubbles: state.bubbles}
+  return {bundles: state.bundles, bubbles: state.bubbles, counter: state.counter}
 }
 
 const mapDispatchToProps = {
     getBundles,
+    incrementCounter
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (Bundles);

@@ -2,12 +2,12 @@ import React from "react";
 import NavLinks from "../NavLinks";
 import "./styles.css"
 
-const NavigationBar = () => {
-    return(
+class NavigationBar extends React.Component {
+    render(){return(
     <nav className="navbar">
         <NavLinks />
     </nav>
     )
-}
+}}
 
 export default NavigationBar;
