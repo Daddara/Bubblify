@@ -1,9 +1,10 @@
 import React from "react";
 import NavLinks from "../NavLinks";
+import "./styles.css"
 
 const NavigationBar = () => {
     return(
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar">
         <NavLinks />
     </nav>
     )
