@@ -47,7 +47,7 @@ function App() {
       <Routes>
       <Route exact path="/" element={ <Main/> }/>
       <Route exact path="/bubbles" element={ <Bubbles/> }/>
-      <Route exact path='/bubbledetails' element={ <BubbleDetails/> }/>
+      <Route exact path='/bubbles/:bubbleId' element={ <BubbleDetails/> }/>
       <Route exact path="/bundles" element={ <Bundles/> }/>
       </Routes>
     </div>

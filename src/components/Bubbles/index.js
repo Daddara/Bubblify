@@ -1,8 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import { Redirect } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import {useSelector} from 'react-redux';
 import { getBubbles } from "../../actions/getBubblesAction";
 import propTypes from 'prop-types';
 import "./styles.css";
@@ -25,38 +23,30 @@ class Bubbles extends React.Component{
   render() {
     // const bubbles = useSelector(state => state.bubbles);
     return (
-        <div>
+        <div className = "AllBubbles">
             {this.props.bubbles && this.props.bubbles.data.map((bubble) => {
                 return (
-                    <div className="Container">
-                        <div className="Grid">
-                            <div key={bubble.id} className="Bubbles">
-                            <div>
-                                <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
-                            </div>
-                                <div>
-                                    <h1 className="Heading">{bubble.name}</h1>
-                                </div>
-                            <div>
-                                <p className="BubbleDetails">{bubble.description}</p>
-                                <p className="BubblePrice">Price: {bubble.price} kr</p>
-                            <div>
-                                <NavLink to={`/bubbledetails/${bubble.id}`} className="DetailButton" >More Info</NavLink>
-                            </div>
-                            </div>
-                                <button className="CartButton" onClick={() => this.addToLocalStorage(bubble)}>Add to cart</button>
-                            </div>
+                    <div key={bubble.id} className="Bubbles">
+                        <div>
+                            <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
                         </div>
+                        <div>
+                            <h1 className="Heading">{bubble.name}</h1>
+                        </div>
+                        <div>
+                            <p className="BubbleDetails">{bubble.description}</p>
+                            <p className="BubblePrice">Price: {bubble.price} kr</p>
+                        <div>
+                            <NavLink className="DetailButton" to={{pathname: `/bubbles/${bubble.id}`, state: {"Hello": 1} }}>More Info</NavLink>
+                        </div>
+                        </div>
+                        <button className="CartButton" onClick={() => this.addToLocalStorage(bubble)}>Add to cart</button>
                     </div>
-                        )
-                    }
-                )
+                    )
+                })
             }
         </div>
-            )
-
-
-  }
+            )}
 }
 
 const mapStateToProps = (state) => {
@@ -66,7 +56,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   getBubbles,
 }
-
 
 Bubbles.propTypes = {
 
