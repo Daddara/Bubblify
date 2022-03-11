@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Bubbles from './components/Bubbles';
 import BubbleDetails from './components/BubbleDetails';
 import Bundles from './components/Bundles';
@@ -48,17 +48,17 @@ function App() {
       {/* <header className="App-header">
       </header> */}
       <NavigationBar />
-      <Routes>
-      <Route exact path="/" element={ <Main/> }/>
-      <Route exact path="/bubbles" element={ <Bubbles/> }/>
-      <Route exact path='/bubbles/:bubbleId' element={ <BubbleDetails/> }/>
+      {/* <Routes> */}
+      <Route exact path="/" component={ Main }/>
+      <Route exact path="/bubbles" component={ Bubbles }/>
+      <Route exact path='/bubbles/:bubbleId' component={ BubbleDetails }/>
       {/* <Route exact path='/bubbledetails' element={ <BubbleDetails/> }/> */}
-      <Route exact path="/bundles" element={ <Bundles/> }/>
-      <Route exact path="/cart" element={ <Cart/> }/>
-      <Route exact path="/cart/checkout" element={ <Checkout/> }/>
-      <Route exact path="/cart/checkout/deliver" element={ <DeliverCheckout/> }/>
-      <Route exact path="/cart/checkout/pickup" element={ <StoreCheckout/> }/>
-      </Routes>
+      <Route exact path="/bundles" component={ Bundles }/>
+      <Route exact path="/cart" component={ Cart }/>
+      <Route exact path="/cart/checkout" component={ Checkout }/>
+      <Route exact path="/cart/checkout/deliver" component={ DeliverCheckout }/>
+      <Route exact path="/cart/checkout/pickup" component={ StoreCheckout }/>
+      {/* </Routes> */}
     </div>
   );
 }

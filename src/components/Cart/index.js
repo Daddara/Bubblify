@@ -34,7 +34,7 @@ class Cart extends React.Component{
                     className="checkoutbtn"
                     // activeClassName="is-active"
                     to="/cart/checkout"
-                    exact="true">
+                    exact>
                 Checkout
                 </NavLink>
             </div>
