@@ -37,38 +37,27 @@
     border-radius: 5px;
 }
 
-.CartButton {
+.Button {
     background-color: rgb(245, 245, 245);
     color: black;
     border: 1px solid black;
     border-radius: 5px;
     margin-top: 15px;
     padding: 5px;
+    text-decoration: none;
 }
 
-.DetailButton {
-    background-color: rgb(245, 245, 245);
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 15px;
-    padding: 5px;
-}
-
-.Bubbles:hover {
-    border: 2px solid green;
-    cursor: pointer;
-}
-
-.CartButton:hover {
-    background-color: green;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.DetailButton:hover {
+.Button:hover {
     background-color: green;
     cursor: pointer;
+}
+
+.Button:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
 }
 
 .BubbleImg:hover {

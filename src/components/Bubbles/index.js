@@ -28,7 +28,6 @@ class Bubbles extends React.Component{
 
 
     render() {
-        console.log(this);
         // const bubbles = useSelector(state => state.bubbles);
         return (
             <div className = "AllBubbles">
@@ -45,10 +44,10 @@ class Bubbles extends React.Component{
                             <p>{bubble.description}</p>
                             <p className="BubblePrice">Price: {bubble.price} kr</p>
                         <div>
-                            <NavLink className="DetailButton" to={`/bubbles/${bubble.id}`} exact  state={{ bubble: bubble }}>More Info</NavLink>
+                            <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
                         </div>
                         </div>
-                        <button className="CartButton" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
+                        <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
                     </div>
                     )
                 })
