@@ -85,7 +85,7 @@ class StoreCheckout extends React.Component{
             // style={{ float: 'right', marginTop: '10' }} 
             />
         </Form>
-        { this.state.redirect ? (<Redirect push to="/"/>) : null }
+        { this.state.redirect ? (<Redirect push to="/order"/>) : null }
             </>
         )
     }

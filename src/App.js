@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import StoreCheckout from './components/StoreCheckout';
 import DeliverCheckout from './components/DeliverCheckout';
+import OrderReview from './components/OrderReview';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
 import { getBubbles } from './actions/getBubblesAction';
@@ -58,6 +59,7 @@ function App() {
       <Route exact path="/cart/checkout" component={ Checkout }/>
       <Route exact path="/cart/checkout/deliver" component={ DeliverCheckout }/>
       <Route exact path="/cart/checkout/pickup" component={ StoreCheckout }/>
+      <Route exact path="/order" component={OrderReview}/>
       {/* </Routes> */}
     </div>
   );
