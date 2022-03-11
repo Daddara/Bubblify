@@ -40,7 +40,7 @@ const NavLinks = () => {
             <NavLink
                 className="cart navbar-item"
                 // activeClassName="is-active"
-                to="/"
+                to="/cart"
                 exact="true">
                 <img className="cart" src={cart}></img>
             </NavLink>

@@ -33,9 +33,9 @@ class Bundles extends React.Component{
     if(localStorage.getItem('cart') == null){
         localStorage.setItem('cart', '[]');
     }
-    
     var prevData = JSON.parse(localStorage.getItem('cart'));
-    prevData.push(bundle);
+    var the_bundle = {"bundle" : bundle}
+    prevData.push(the_bundle);
     localStorage.setItem('cart', JSON.stringify(prevData));
     console.log(localStorage.getItem('cart'));
   }
@@ -47,7 +47,7 @@ class Bundles extends React.Component{
     
     return(
         <div className="bundlegod">
-        <h1>Bundles</h1>
+        <h1 className="h1Bundles">Bundles</h1>
   
         {/* Fetch data from API */}
   
@@ -61,6 +61,7 @@ class Bundles extends React.Component{
             this.state.bundles.map((bundle, index) => {
               // id, name, items
               this.state.price = 0;
+              bundle.bubbleLis = [];
               return (
                 <div className="bundle" key={bundle.id}>
                     {/* <div className="imgdiv">
@@ -68,7 +69,7 @@ class Bundles extends React.Component{
                     </div> */}
                   
                     
-                <h2>{bundle.name}</h2>
+                <h2 className="bundleName">{bundle.name}</h2>
                 <div className="nextbundlediv">
                     {bundle.items &&
                 bundle.items.map((item, index) => {
@@ -77,8 +78,8 @@ class Bundles extends React.Component{
                 
                 let bubble = this.getBubble(item);
                 this.addPrice(bubble);
-                if(index == bundle.items.length -1){
-                    this.state.bundles[index].price = this.state.price;
+                bundle.bubbleLis.push(bubble);
+                if(index === (bundle.items.length - 1)){
                     bundle.price = this.state.price;
                 }
                 return (
