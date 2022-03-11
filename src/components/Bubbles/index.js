@@ -37,7 +37,7 @@ class Bubbles extends React.Component{
                             <p className="BubbleDetails">{bubble.description}</p>
                             <p className="BubblePrice">Price: {bubble.price} kr</p>
                         <div>
-                            <NavLink className="DetailButton" to={{pathname: `/bubbles/${bubble.id}`, state: {"Hello": 1} }}>More Info</NavLink>
+                            <NavLink className="DetailButton" to={`/bubbles/${bubble.id}`} exact="true"  state={{ bubble: bubble }}>More Info</NavLink>
                         </div>
                         </div>
                         <button className="CartButton" onClick={() => this.addToLocalStorage(bubble)}>Add to cart</button>

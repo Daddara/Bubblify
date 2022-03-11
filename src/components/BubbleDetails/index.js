@@ -1,32 +1,27 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import "./styles.css";
 
 
 
-class BubbleDetails extends React.Component{
-    
+const BubbleDetails =() =>{
+    const location = useLocation();
+    console.log(location);
     // state = {
     //     bubble: this.props.location.bubble
     //   }
-    constructor(props){
-        super(props);
-        console.log(props);
-    }
+    // constructor(props){
+    //     super(props);
+    //     console.log(props);
+    // }
     
-    componentDidMount(){
-        console.log(this);
-    }
-    
-      render() {
-          console.log(this.props.state);
         
 
           //let bubble =  this.props.location.bubble;
         // const bubbles = useSelector(state => state.bubbles);
         return (
             <div className = "AllBubbles">
-        
+            Hello
                         {/* <div key={bubble.id} className="Bubbles">
                             <div>
                                 <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
@@ -44,7 +39,7 @@ class BubbleDetails extends React.Component{
             </div>
                         )
             
-    }}
+    }
 
 
 
