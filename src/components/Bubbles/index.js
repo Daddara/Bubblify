@@ -5,12 +5,15 @@ import { getBubbles } from "../../actions/getBubblesAction";
 import propTypes from 'prop-types';
 import "./styles.css";
 
-
 class Bubbles extends React.Component{
     
     state = {
         bubbles: this.props.bubbles.data
     }
+
+    changeText = (text) => {
+        this.setState({ text }); 
+    } 
     
     addToCart(e, bubble){
         e.preventDefault();
@@ -24,37 +27,34 @@ class Bubbles extends React.Component{
         prevData.push(the_bubble);
         localStorage.setItem('cart', JSON.stringify(prevData));
         console.log(localStorage.getItem('cart'));
-      }
+    }
 
 
     render() {
-        // const bubbles = useSelector(state => state.bubbles);
         return (
             <div className = "AllBubbles">
             {this.props.bubbles && this.props.bubbles.data.map((bubble) => {
                 return (
                     <div key={bubble.id} className="Bubbles">
-                        <div>
                             <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
-                        </div>
                         <div>
-                            <h1 className="Heading">{bubble.name}</h1>
+                            <h2 className="Heading">{bubble.name}</h2>
                         </div>
-                        <div>
+                        <div className ="Description">
                             <p>{bubble.description}</p>
                             <p className="BubblePrice">Price: {bubble.price} kr</p>
-                        <div>
-                            <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
                         </div>
-                        </div>
-                        <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
+                        <div className="ButtonBox">
+                                <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
+                                <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
+                            </div>
                     </div>
                     )
                 })
             }
         </div>
-            )}
-        }
+    )}
+}
 
         
 const mapStateToProps = (state) => {
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  getBubbles,
+  getBubbles
 }
 
 Bubbles.propTypes = {

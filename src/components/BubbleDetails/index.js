@@ -1,14 +1,12 @@
 import React from "react";
 import "./styles.css";
 
-
 class BubbleDetails extends React.Component{
     
     state = {
         bubble: this.props.location.bubble
     };
 
-    
     addToCart(e, bubble){
         e.preventDefault();
         console.log("Adding to cart..");
@@ -24,7 +22,6 @@ class BubbleDetails extends React.Component{
     }
     
     render(){
-
         const bubble = this.props.location.bubble
         return (
             <div className = "Bubble">
@@ -33,12 +30,12 @@ class BubbleDetails extends React.Component{
                         <img className="Img" src={bubble.image} alt={bubble.name} />
                     </div>
                     <div>
-                        <div className="Heading">
+                        <div className="Title">
                             <h2>{bubble.name}</h2>
                         </div>
-                    <div>
-                        <p className="BubbleDetails">{bubble.description}</p>
-                        <p className="BubblePrice">Price: {bubble.price} kr</p>
+                    <div className="DetailBox">
+                        <p>{bubble.description}</p>
+                        <p> Price: {bubble.price} kr</p>
                     </div>
                         <button className="CartButton" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>                
                     </div>
@@ -46,6 +43,5 @@ class BubbleDetails extends React.Component{
             </div>
         )      
     }}
-
 
 export default BubbleDetails;
