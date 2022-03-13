@@ -5,6 +5,7 @@ import { getBubbles } from "../../actions/getBubblesAction";
 import propTypes from 'prop-types';
 import "./styles.css";
 
+
 class Bubbles extends React.Component{
     
     state = {
@@ -45,9 +46,9 @@ class Bubbles extends React.Component{
                             <p className="BubblePrice">Price: {bubble.price} kr</p>
                         </div>
                         <div className="ButtonBox">
-                                <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
-                                <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
-                            </div>
+                            <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
+                            <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
+                        </div>
                     </div>
                     )
                 })
