@@ -10,6 +10,7 @@ class Cart extends React.Component{
     }
     render(){
         console.log(this.state.cart);
+        if(this.state.cart !== null){
         return(
             // Render all items from the "cart" section in localstorage
             // TODO: Implement single bubble differently
@@ -28,7 +29,7 @@ class Cart extends React.Component{
                     </div>
                 );
                 }
-                else{
+                else if(item.hasOwnProperty("bubble")){
                     return (
                     <div className="bundlebubble" key={item.bubble.id}>
                     <div className="textbox">
@@ -39,6 +40,8 @@ class Cart extends React.Component{
                 );
                 }
                 })}
+                
+                
                     
                 </div>
                 <NavLink
@@ -53,6 +56,12 @@ class Cart extends React.Component{
             
         )
     }
+    else{
+        return (
+            <div>No items in cart</div>
+        )
+    }
+}
     
 }
 
