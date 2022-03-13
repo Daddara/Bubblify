@@ -67,7 +67,8 @@ class StoreCheckout extends React.Component{
         return(
             // Render a form
             <>
-                <h1>Contact information</h1>
+        <h1 className="h1Bundles">Contact information</h1>
+        <div className="formDiv">
         <Form onSubmit={ e => this.submitForm(e) }>
           <Input
             type="text"
@@ -88,10 +89,11 @@ class StoreCheckout extends React.Component{
           <input
             type="submit"
             value="Submit"
-            className="btn"
+            className="formbtn"
             // style={{ float: 'right', marginTop: '10' }} 
             />
         </Form>
+        </div>
         { this.state.redirect ? (<Redirect push to="/order"/>) : null }
             </>
         )
