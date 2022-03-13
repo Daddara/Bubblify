@@ -17,7 +17,8 @@ class Cart extends React.Component{
                 <div className="cartDiv">
                 {this.state.cart &&
                 this.state.cart.map((item, index) => {
-                console.log(item.bundle.bubbleLis)
+                // console.log(item.bundle.bubbleLis)
+                if(item.hasOwnProperty("bundle")){
                 return (
                     <div className="bundlebubble" key={item.bundle.id}>
                     <div className="textbox">
@@ -26,7 +27,17 @@ class Cart extends React.Component{
                     </div>
                     </div>
                 );
-                
+                }
+                else{
+                    return (
+                    <div className="bundlebubble" key={item.bubble.id}>
+                    <div className="textbox">
+                    <h2>{item.bubble.name}</h2>
+                    <p>{item.bubble.price} kr</p>
+                    </div>
+                    </div>
+                );
+                }
                 })}
                     
                 </div>
