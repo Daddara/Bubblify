@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import toastr from 'toastr';
+import validator from 'validator';
 import Form from '../Form';
 import Input from '../Input';
 import RemoteSelectItem from "../RemoteSelectItem";
@@ -22,7 +23,9 @@ class DeliverCheckout extends React.Component{
           nameError: '',
           telephoneError: '',
           addressError: '',
-          postCodeError: ''
+          postCodeError: '',
+          cityError: '',
+          regionError: ''
         },
       }
     
@@ -41,6 +44,14 @@ class DeliverCheckout extends React.Component{
         if (telephone === '') { errors.telephoneError = 'Telephone is required.'; }
         if (address === '') {errors.addressError = 'Address is required.';}
         if(postCode === '') {errors.postCodeError = 'Post code is required.';}
+        if(region === ''){errors.regionError = 'Region is required.';}
+        if(city === ''){errors.cityError = 'City is required.';}
+        if(validator.isNumeric(telephone) === false){
+          errors.telephoneError = 'Not a valid phone number.'}
+        if( validator.isMobilePhone(telephone) === false){
+          errors.telephoneError = 'Not a valid phone number.';}
+        if(validator.isPostalCode(postCode, "IS") === false){
+            errors.postCodeError = 'Not a valid post code.'}
         if (Object.keys(errors).length > 0) {
           this.setState({ ...this.state.errors, errors });
           return false;
@@ -66,7 +77,7 @@ class DeliverCheckout extends React.Component{
 
     render(){
         const { name, telephone, address, region, city, postCode } = this.state.fields;
-        const { nameError, telephoneError, addressError, postCodeError } = this.state.errors;
+        const { nameError, telephoneError, addressError, postCodeError, cityError, regionError } = this.state.errors;
 
         return(
             // Render a form
@@ -94,6 +105,7 @@ class DeliverCheckout extends React.Component{
             onSelect={ e => this.onInput(e) }
             value={ region }
             name="region"
+            errorMessage={ regionError }
             defaultOption="-- No region is selected --"
             getData={ countryService.getRegions.bind(null, "IS", val => ({ value: val.region, label: val.region })) }
            />
@@ -102,6 +114,7 @@ class DeliverCheckout extends React.Component{
             onSelect={ e => this.onInput(e) }
             value={ city }
             name="city"
+            errorMessage={ cityError }
             defaultOption="-- No city is selected --"
             getData={ countryService.getCities.bind(null, "IS", region, val => ({ value: val.city, label: val.city })) }
             isDisabled={ region === '' } />

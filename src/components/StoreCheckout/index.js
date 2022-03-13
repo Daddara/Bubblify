@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import toastr from 'toastr';
+import validator from 'validator';
 import Form from '../Form';
 import Input from '../Input';
 
@@ -31,6 +32,10 @@ class StoreCheckout extends React.Component{
     
         if (name === '') { errors.nameError = 'Name is required.'; }
         if (telephone === '') { errors.telephoneError = 'Telephone is required.'; }
+        if(validator.isNumeric(telephone) === false){
+          errors.telephoneError = 'Not a valid phone number.'}
+        if( validator.isMobilePhone(telephone) === false){
+          errors.telephoneError = 'Not a valid phone number.';}
         if (Object.keys(errors).length > 0) {
           this.setState({ ...this.state.errors, errors });
           return false;
