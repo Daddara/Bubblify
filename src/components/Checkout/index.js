@@ -6,8 +6,10 @@ import styles from "./styles.css";
 class Checkout extends React.Component{
     render(){
         return(
-            // Store Pickup or Delivered
-            <div>Checkout
+            <div>
+            <h1 className="h1Bundles">Choose Checkout Option</h1>
+            <div className="checkoutDiv">
+            <div>
                 <NavLink
                 className="checkoutbtnopt"
                 // activeClassName="is-active"
@@ -22,6 +24,8 @@ class Checkout extends React.Component{
                 exact>
             Pickup
             </NavLink>
+            </div>
+            </div>
             </div>
         )
     }
