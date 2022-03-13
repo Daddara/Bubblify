@@ -21,9 +21,9 @@ class Cart extends React.Component{
                 // console.log(item.bundle.bubbleLis)
                 if(item.hasOwnProperty("bundle")){
                 return (
-                    <div className="bundlebubble" key={item.bundle.id}>
+                    <div className="bundlebubble" key={"bundle" + item.bundle.id}>
                     <div className="textbox">
-                    <h2>{item.bundle.name}</h2>
+                    <h2>{item.bundle.counter} x {item.bundle.name}</h2>
                     <p>{item.bundle.price} kr</p>
                     </div>
                     </div>
@@ -31,9 +31,9 @@ class Cart extends React.Component{
                 }
                 else if(item.hasOwnProperty("bubble")){
                     return (
-                    <div className="bundlebubble" key={item.bubble.id}>
+                    <div className="bundlebubble" key={"bubble" + item.bubble.id}>
                     <div className="textbox">
-                    <h2>{item.bubble.name}</h2>
+                    <h2>{item.bubble.counter} x {item.bubble.name}</h2>
                     <p>{item.bubble.price} kr</p>
                     </div>
                     </div>
