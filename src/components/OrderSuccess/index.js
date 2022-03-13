@@ -6,6 +6,7 @@ import {getOrder} from '../../actions/getOrderAction';
 import {getCounter} from '../../actions/getCartAction';
 
 
+
 class OrderSuccess extends React.Component{
 
     componentDidMount(){
@@ -28,7 +29,7 @@ class OrderSuccess extends React.Component{
     render(){
         this.processOrder();
         return (
-            <div>Success!</div>
+            <h1 className="h1Bundles">Thank You!</h1>
         )
     }
 }
