@@ -37,8 +37,23 @@ class Bundles extends React.Component{
         localStorage.setItem('cart', '[]');
     }
     var prevData = JSON.parse(localStorage.getItem('cart'));
-    var the_bundle = {"bundle" : bundle}
-    prevData.push(the_bundle);
+    bundle["counter"] = 1;
+    var the_bundle = {"bundle" : bundle};
+    var foundSame = false;
+    for (let i = 0; i < prevData.length; i++) {
+      if(prevData[i].hasOwnProperty('bundle')){
+        if(bundle.id === prevData[i].bundle.id){
+          console.log("GOTTEM");
+          prevData[i].bundle.counter++;
+          prevData[i].bundle.price += bundle.price;
+          foundSame = true;
+        }
+      }
+    }
+    if(!foundSame){
+      prevData.push(the_bundle);
+    }
+    
     localStorage.setItem('cart', JSON.stringify(prevData));
     console.log(localStorage.getItem('cart'));
   }

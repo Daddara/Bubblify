@@ -23,7 +23,7 @@ class Cart extends React.Component{
                 return (
                         <div key={item.bundle.id}  className="CartItem">
                             <div>
-                                <h2 className="Heading">{item.bundle.name}</h2>
+                                <h2 className="Heading">{item.bundle.counter} x {item.bundle.name}</h2>
                                 <p className="BubblePrice">Price: {item.bundle.price} kr</p>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ class Cart extends React.Component{
                         return (
                         <div key={item.bubble.id} className="CartItem">
                             <div>
-                                <h2 className="Heading">{item.bubble.name}</h2>
+                                <h2 className="Heading">{item.bubble.counter} x {item.bubble.name}</h2>
                                 <p className="BubblePrice">Price: {item.bubble.price} kr</p>
                             </div>
                         </div>

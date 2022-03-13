@@ -25,3 +25,12 @@ export const getBundle = async (id) => {
 	// console.log("Single bundle: ", bundle);
 	return bundle;
 }
+
+export const createOrder = async (phoneNumber, order) => {
+	await axios.post(api + '/orders/' + phoneNumber, order);
+}
+
+export const getOrder = async(phoneNumber) => {
+	const order = await axios.get(api + '/orders/' + phoneNumber);
+	return order;
+}

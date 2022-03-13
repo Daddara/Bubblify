@@ -21,13 +21,28 @@ class Bubbles extends React.Component{
         e.preventDefault();
         this.props.incrementCounter(1);
         console.log("Adding to cart..");
+        console.log(bubble)
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
             localStorage.setItem('cart', '[]');
         }
         var prevData = JSON.parse(localStorage.getItem('cart'));
-        var the_bubble = {"bubble" : bubble}
+        bubble["counter"] = 1;
+        var the_bubble = {"bubble" : bubble};
+        var foundSame = false;
+        for (let i = 0; i < prevData.length; i++) {
+            if(prevData[i].hasOwnProperty('bubble')){
+            if(bubble.id === prevData[i].bubble.id){
+            console.log("GOTTEM");
+            prevData[i].bubble.counter++;
+            prevData[i].bubble.price += bubble.price;
+            foundSame = true;
+            }
+        }
+        }
+        if(!foundSame){
         prevData.push(the_bubble);
+        }
         localStorage.setItem('cart', JSON.stringify(prevData));
         console.log(localStorage.getItem('cart'));
     }
