@@ -9,6 +9,7 @@ class Cart extends React.Component{
     }
     render(){
         console.log(this.state.cart);
+        if(this.state.cart !== null){
         return(
             // Render all items from the "cart" section in localstorage
             // TODO: Implement single bubble differently
@@ -39,12 +40,16 @@ class Cart extends React.Component{
                     );
                     }
                     })}
-                    <NavLink className="checkoutbtn" to="/cart/checkout" exact>Proceed to Checkout</NavLink>
-                    
+                    <NavLink className="checkoutbtn" to="/cart/checkout" exact>Proceed to Checkout</NavLink>  
                 </div>
             </div>   
         )
-    } 
-}
+    }
+    else{
+        return (
+            <div>No items in cart</div>
+        )
+    }
+}}
 
 export default Cart;

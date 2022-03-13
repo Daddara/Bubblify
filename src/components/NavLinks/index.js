@@ -2,12 +2,36 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./styles.css";
 import cart from "./../../whitecart.png";
-import logo from "./../../logo.PNG"
-const NavLinks = () => {
-    return(
+import logo from "./../../logo.PNG";
+import {connect} from "react-redux";
+import { getCounter } from '../../actions/getCartAction'
+
+
+
+
+
+// if(localStorage.getItem('cart') == null){
+//     var num = 0;
+// }
+// var numArray = JSON.parse(localStorage.getItem('cart'));
+// console.log(numArray)
+
+
+
+
+class NavLinks extends React.Component{
+    state ={
+        
+        // num: JSON.parse(localStorage.getItem('cart')).length
+    }
+    render(){
+        console.log(this.props);
+        return(
           
     <ul className="nav-links">
+        <NavLink className="navbar-item" to ="/">
         <li className="logoContainer"><img className="logo" src={logo}></img><h1 className="title">Bubblify</h1></li>
+        </NavLink>
         <li>
             <NavLink
                 className="products navbar-item"
@@ -43,10 +67,20 @@ const NavLinks = () => {
                 to="/cart"
                 exact>
                 <img className="cart" src={cart}></img>
+                <i className="Num">{this.props.counter}</i>
+               
             </NavLink>
         </li>
     </ul>
-    )
+    )}
 }
 
-export default NavLinks;
+const mapStateToProps = (state) => {
+    return {counter: state.counter}
+  }
+  
+  const mapDispatchToProps = {
+      getCounter
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps) (NavLinks);

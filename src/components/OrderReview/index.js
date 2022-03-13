@@ -7,11 +7,16 @@ class OrderReview extends React.Component{
         order: JSON.parse(localStorage.getItem('cart'))
     }
 
+    submit(e){
+        console.log("Submit");
+    }
+
     render(){
         return(
             // Render here a sort of list of the cart
             <div><NavLink
             className="checkoutbtn"
+            onClick={e => this.submit(e)}
             // activeClassName="is-active"
             to="/order/success"
             exact>

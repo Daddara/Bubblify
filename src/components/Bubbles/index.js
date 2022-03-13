@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { getBubbles } from "../../actions/getBubblesAction";
+import { incrementCounter} from '../../actions/getCartAction';
 import propTypes from 'prop-types';
 import "./styles.css";
 
@@ -18,6 +19,7 @@ class Bubbles extends React.Component{
     
     addToCart(e, bubble){
         e.preventDefault();
+        this.props.incrementCounter(1);
         console.log("Adding to cart..");
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
@@ -63,7 +65,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  getBubbles
+  getBubbles,
+  incrementCounter
 }
 
 Bubbles.propTypes = {
