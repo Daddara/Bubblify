@@ -47,7 +47,9 @@ class Cart extends React.Component{
     }
     else{
         return (
-            <div>No items in cart</div>
+            <div>
+                <h1 className="h1Bundles">No items in cart</h1>
+            </div>
         )
     }
 }}
