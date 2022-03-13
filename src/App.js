@@ -9,6 +9,7 @@ import Checkout from './components/Checkout';
 import StoreCheckout from './components/StoreCheckout';
 import DeliverCheckout from './components/DeliverCheckout';
 import OrderReview from './components/OrderReview';
+import OrderSuccess from './components/OrderSuccess';
 import Main from './components/Main';
 import NavigationBar from './components/NavigationBar';
 import About from './components/About';
@@ -63,6 +64,7 @@ function App() {
       <Route exact path="/cart/checkout/deliver" component={ DeliverCheckout }/>
       <Route exact path="/cart/checkout/pickup" component={ StoreCheckout }/>
       <Route exact path="/order" component={OrderReview}/>
+      <Route exact path="/order/success" component={OrderSuccess}/>
       {/* </Routes> */}
     </div>
   );

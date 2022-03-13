@@ -6,55 +6,64 @@ import propTypes from 'prop-types';
 import "./styles.css";
 
 
-// if(localStorage.getItem('cart') == null){
-//     localStorage.setItem('cart', '[]');
-// }
-// var prevData = JSON.parse(localStorage.getItem('cart'));
-// prevData.push(bundle);
-// localStorage.setItem('cart', JSON.stringify(prevData));
-
 class Bubbles extends React.Component{
+    
+    state = {
+        bubbles: this.props.bubbles.data
+    }
 
-  state = {
-    bubbles: this.props.bubbles.data
-  }
+    changeText = (text) => {
+        this.setState({ text }); 
+    } 
+    
+    addToCart(e, bubble){
+        e.preventDefault();
+        console.log("Adding to cart..");
+        // Check if cart exists, otherwise create a new array for cart
+        if(localStorage.getItem('cart') == null){
+            localStorage.setItem('cart', '[]');
+        }
+        var prevData = JSON.parse(localStorage.getItem('cart'));
+        var the_bubble = {"bubble" : bubble}
+        prevData.push(the_bubble);
+        localStorage.setItem('cart', JSON.stringify(prevData));
+        console.log(localStorage.getItem('cart'));
+    }
 
 
-  render() {
-    // const bubbles = useSelector(state => state.bubbles);
-    return (
-        <div className = "AllBubbles">
+    render() {
+        return (
+            <div className = "AllBubbles">
             {this.props.bubbles && this.props.bubbles.data.map((bubble) => {
                 return (
                     <div key={bubble.id} className="Bubbles">
-                        <div>
                             <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
-                        </div>
                         <div>
-                            <h1 className="Heading">{bubble.name}</h1>
+                            <h2 className="Heading">{bubble.name}</h2>
                         </div>
-                        <div>
-                            <p className="BubbleDetails">{bubble.description}</p>
+                        <div className ="Description">
+                            <p>{bubble.description}</p>
                             <p className="BubblePrice">Price: {bubble.price} kr</p>
-                        <div>
-                            <NavLink className="DetailButton" to={`/bubbles/${bubble.id}`} exact  state={{ bubble: bubble }}>More Info</NavLink>
                         </div>
+                        <div className="ButtonBox">
+                            <NavLink className="Button" to={{pathname:`/bubbles/${bubble.id}`,bubble: bubble}} exact >More Info</NavLink>
+                            <button className="Button" onClick={e => this.addToCart(e, bubble)}>Add to cart</button>
                         </div>
-                        <button className="CartButton" onClick={() => this.addToLocalStorage(bubble)}>Add to cart</button>
                     </div>
                     )
                 })
             }
         </div>
-            )}
+    )}
 }
 
+        
 const mapStateToProps = (state) => {
   return {bubbles: state.bubbles}
 }
 
 const mapDispatchToProps = {
-  getBubbles,
+  getBubbles
 }
 
 Bubbles.propTypes = {

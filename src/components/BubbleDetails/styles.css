@@ -1,73 +1,73 @@
-/* .Heading {
-    font-size: 35px;
-    color: "black";
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-.BubblePrice{
-    font-weight: bold;
-}
-
-.BubbleDetails{
-    color: black;
-    font-size: 15px;
-
-}
-
-.BubbleImg{
-    height: 150px;
-    width: 150px;
-}
-
-.Bubbles{
+.Bubble {
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto;
+    box-shadow: 0 0 10px rgb(146, 146, 146);
+    border: 2px solid lightgray;
     background-color: rgb(233, 232, 232);
-    margin: 1%;
-    padding: 15px;
-    border: 1px solid lightgray;
-    width: 25%;
-    border-radius: 5px;
+}
+
+.Details {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+}
+
+.Img {
+    width: 80%;
+    height: 80%;
+    margin: 30px;
+}
+
+.Title {
+    max-width: 700px;
+    min-width: 300px;
+    margin: 40px;
+    font-size: 30px;
+}
+
+.DetailBox {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 40px;
+    margin-right: 100px;
 }
 
 .CartButton {
     background-color: rgb(245, 245, 245);
     color: black;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
-    margin-top: 15px;
+    margin: 40px;
     padding: 5px;
-}
-
-.DetailButton {
-    background-color: rgb(245, 245, 245);
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 15px;
-    padding: 5px;
-}
-
-.Bubbles:hover {
-    border: 2px solid green;
-    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
 }
 
 .CartButton:hover {
     background-color: green;
-    font-weight: bold;
     cursor: pointer;
 }
 
-.DetailButton:hover {
-    background-color: green;
-    cursor: pointer;
+.CartButton:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+    transform: scale(1.1);
+	transition: .1s;
+}
+
+.Img:hover {
+    animation: bounce 2s ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
 }
 
 
-.Layout{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr; 
-    column-gap: 10px;
-    row-gap: 10px;
-} */
