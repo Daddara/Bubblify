@@ -4,13 +4,13 @@
     padding-top:2rem;
     height:80%;
     background-color: rgb(233, 232, 232);
-    border: 1px solid lightgray;
+    border: 5px solid lightgray;
     border-radius: 5px;
 }
 .aboutHeader{
-display:grid;
-grid-template-columns : 1fr 1fr 1fr 1fr;
-grid-template-areas: "aboutTitle . . aboutImg";
+    display: grid; 
+    grid-template-columns : 1fr 1fr 1fr 1fr;
+    grid-template-areas: "aboutTitle . . aboutImg";
 }
 
 .aboutTitle{
@@ -20,14 +20,13 @@ grid-template-areas: "aboutTitle . . aboutImg";
 }
 
 .aboutImg{
-height:10rem;
+    display:block;
+    height:200px;
     grid-area:aboutImg; 
+
 }
 
-/* .aboutTextContainer{
-
-} */
-
 .aboutText{
+    width:70%;
 
 }

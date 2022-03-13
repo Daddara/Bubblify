@@ -15,7 +15,8 @@ class About extends React.Component{
             <img className="aboutImg" src={ logo }></img>
             </div>
             <div className="aboutTextContainer">
-            <p className="aboutText">A major catastrophe has just happened! All the key players in the bubble industry have been 
+            <p className="aboutText">
+            A major catastrophe has just happened! All the key players in the bubble industry have been 
 relying on the same manufacturer which just recently went through a really bad lawsuit which 
 resulted in them going bankrupt! It is already May and the summer is almost here and kids want 
 their bubbles! A new emerging company called Bubblify have decided to jump on this chance 
@@ -23,11 +24,10 @@ and become the new big player in the bubble industry. They want their business t
 through their website, which has need been made yet... That’s where you come in! You are going 
 to build a website for them before the summer season begins. Please, do not disappoint them nor 
 all the soon-to-be bubbleless children... </p>
-</div>
+            </div>
         </div>
-            )}
+        )}
 }
-
 
 
 export default About;
