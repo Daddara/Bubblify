@@ -10,6 +10,7 @@ import styles from "./styles.css";
 import propTypes from 'prop-types';
 
 
+
 class DeliverCheckout extends React.Component{
     state = {
         redirect: false,
@@ -175,5 +176,6 @@ DeliverCheckout.propTypes = {
   // Error for postal code, if postal code is not valid, this string will have an error message
   postCodeError: propTypes.string.isRequired
 };
+
 
 export default DeliverCheckout;
