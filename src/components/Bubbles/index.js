@@ -55,8 +55,6 @@ class Bubbles extends React.Component{
         }
         
     }
-
-
     render() {
         return (
             <div className = "AllBubbles">

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./styles.css";
 
 
 
@@ -27,7 +26,7 @@ class OrderReview extends React.Component{
             return (
                     <div key={item.bundle.id}  className="CartItem">
                         <div>
-                            <h2 className="Heading">{item.bundle.counter} x {item.bundle.name}</h2>
+                            <h2 className="Heading">{item.bundle.counter}x {item.bundle.name}</h2>
                             <p className="BubblePrice">Price: {item.bundle.price} kr</p>
                         </div>
                     </div>
@@ -37,7 +36,7 @@ class OrderReview extends React.Component{
                     return (
                     <div key={item.bubble.id} className="CartItem">
                         <div>
-                            <h2 className="Heading">{item.bubble.counter} x {item.bubble.name}</h2>
+                            <h2 className="Heading">{item.bubble.counter}x {item.bubble.name}</h2>
                             <p className="BubblePrice">Price: {item.bubble.price} kr</p>
                         </div>
                     </div>
@@ -55,7 +54,7 @@ class OrderReview extends React.Component{
 
 
                     </div>
-                <NavLink className="checkoutbtn" onClick={e => this.submit(e)} to="/order/success" exact>Confirm Order</NavLink>  
+                <NavLink className="checkoutbtn" to="/order/success" exact>Confirm Order</NavLink>
 
             </div>
         </div>  

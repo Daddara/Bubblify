@@ -4,7 +4,6 @@ import "./styles.css";
 import logo from "./../../logo.PNG"
 
 
-
 class About extends React.Component{
 
   render() {
