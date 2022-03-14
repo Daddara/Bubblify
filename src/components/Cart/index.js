@@ -4,9 +4,11 @@ import styles from "./styles.css";
 import {connect} from "react-redux";
 import {getOrder} from "../../actions/getOrderAction";
 import {setCounter} from '../../actions/getCartAction';
+import propTypes, { bool, shape } from 'prop-types';
 
 
 class Cart extends React.Component{
+
     state ={
         cart: JSON.parse(localStorage.getItem('cart')),
         user: JSON.parse(localStorage.getItem('user')),
@@ -26,12 +28,16 @@ class Cart extends React.Component{
         let oldCartlen = oldCart.length;
         this.props.setCounter(oldCartlen);
         this.setState({ cart : oldCart });
+
     }
+
+    
 
     
     render(){
         if(this.state.cart !== null){
         return(
+
             // Render all items from the "cart" section in localstorage
             // TODO: Implement single bubble differently
             <div>
@@ -83,7 +89,6 @@ class Cart extends React.Component{
         )
     }
 }}
-
 const mapStateToProps = (state) => {
     return {order: state.order, counter: state.counter}
   }
@@ -91,6 +96,14 @@ const mapStateToProps = (state) => {
   const mapDispatchToProps = {
     getOrder,
     setCounter
+  }
+
+  Cart.protoTypes = {
+      // cart array
+    cart: propTypes.arrayOf({
+        //cart counter
+        counter: propTypes.number.isRequired
+    }).isRequired
   }
 
   export default connect(mapStateToProps, mapDispatchToProps) (Cart);
