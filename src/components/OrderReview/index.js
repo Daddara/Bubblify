@@ -9,13 +9,8 @@ class OrderReview extends React.Component{
         order: JSON.parse(localStorage.getItem('cart'))
     }
 
-    submit(e){
-        console.log("Submit");
-    };
-
  
     render(){
-        console.log("hello", this.state.order)
         return(
             // Render here a sort of list of the cart
             
@@ -36,7 +31,6 @@ class OrderReview extends React.Component{
                 );
                 }
                 else{
-                    console.log("hello")
                     return (
                     <div key={item.bubble.id} className="CartItem">
                         <div>

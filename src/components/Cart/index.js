@@ -19,10 +19,7 @@ class Cart extends React.Component{
     }
    
     getPrev(e){
-        console.log(this.props.order.data);
-        console.log(this.props.order.data.length);
         let len = this.props.order.data.length;
-        console.log(this.props.order.data[len -1 ]);
         let data = this.props.order.data[len -1 ];
         localStorage.setItem('cart', JSON.stringify(data));
         let oldCart = JSON.parse(localStorage.getItem('cart'));
@@ -33,7 +30,6 @@ class Cart extends React.Component{
 
     
     render(){
-        console.log(this.state.cart);
         if(this.state.cart !== null){
         return(
             // Render all items from the "cart" section in localstorage

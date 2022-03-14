@@ -24,8 +24,6 @@ class Bubbles extends React.Component{
     addToCart(e, bubble){
         e.preventDefault();
         this.props.incrementCounter(1);
-        console.log("Adding to cart..");
-        console.log(bubble)
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
             localStorage.setItem('cart', '[]');
@@ -37,7 +35,6 @@ class Bubbles extends React.Component{
         for (let i = 0; i < prevData.length; i++) {
             if(prevData[i].hasOwnProperty('bubble')){
             if(bubble.id === prevData[i].bubble.id){
-            console.log("GOTTEM");
             prevData[i].bubble.counter++;
             prevData[i].bubble.price += bubble.price;
             foundSame = true;
@@ -48,13 +45,11 @@ class Bubbles extends React.Component{
         prevData.push(the_bubble);
         }
         localStorage.setItem('cart', JSON.stringify(prevData));
-        console.log(localStorage.getItem('cart'));
         // let text;
         if(this.state.popup === false){
             if (window.confirm("Would you like to proceed to checkout?") == true) {
                 // text = "You pressed OK!";
                 this.setState({ redirect: true });
-                console.log("GOGo");    
             }
             this.setState({ popup: true });
         }
