@@ -11,7 +11,7 @@ class About extends React.Component{
     return (
         <div className="aboutContainer">
             <div className="aboutHeader">
-            <h1 className="aboutTitle" >About us</h1>
+            <h1 className="aboutTitle">About us</h1>
             <img className="aboutImg" src={ logo }></img>
             </div>
             <div className="aboutTextContainer">
