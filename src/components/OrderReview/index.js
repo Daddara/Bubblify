@@ -6,16 +6,19 @@ import styles from "./styles.css";
 
 class OrderReview extends React.Component{
     state = {
-        order: JSON.parse(localStorage.getItem('cart'))
+        order: JSON.parse(localStorage.getItem('cart')),
+        user: JSON.parse(localStorage.getItem('user'))
+
     }
 
  
     render(){
+
         return(
             // Render here a sort of list of the cart
             
             <div>
-            <h1 className="h1Bundles">Cart Items</h1>
+            <h1 className="h1Bundles">Your Order</h1>
             <div className="cartDiv">
                 {this.state.order &&
                 this.state.order.map((item, index) => {
@@ -41,19 +44,22 @@ class OrderReview extends React.Component{
                 );
                 }
                 })}
-                <NavLink className="checkoutbtn" to="/order/success" exact>Confirm Order</NavLink>  
+
+                  <div className="infobox">
+                        <h2>Your Information</h2>
+                        <p>Name: {this.state.user.name}</p>
+                        <p>Phone: {this.state.user.telephone}</p>
+                        { this.state.user.hasOwnProperty("address") ? (<p>Address: {this.state.user.address}</p>): null }
+                        { this.state.user.hasOwnProperty("city") ? (<p>City: {this.state.user.city}</p>): null }
+                        { this.state.user.hasOwnProperty("postCode") ? (<p>Postcode: {this.state.user.postCode}</p>): null }
+
+
+                    </div>
+                <NavLink className="checkoutbtn" onClick={e => this.submit(e)} to="/order/success" exact>Confirm Order</NavLink>  
+
             </div>
         </div>  
 
-
-        //     <div><NavLink
-        //     className="checkoutbtn"
-        //     onClick={e => this.submit(e)}
-        //     // activeClassName="is-active"
-        //     to="/order/success"
-        //     exact>
-        // Confirm
-        // </NavLink></div>
         )
     }
 }
