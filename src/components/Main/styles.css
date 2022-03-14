@@ -1,0 +1,17 @@
+.body{
+    height:max-content;
+}
+.mainPage{
+    background-color:  rgb(233, 232, 232);
+    height:max-content;
+    justify-content: center;
+    
+}
+.mainLogo{
+    max-width:60%;
+    margin-left:20%;
+
+}
+.nav-links{
+    margin-bottom: 0;
+}
