@@ -60,7 +60,7 @@ class StoreCheckout extends React.Component{
 
     render(){
         
-        const { name, telephone} = this.state.fields;
+        const { name, telephone } = this.state.fields;
         const { nameError, telephoneError } = this.state.errors;
         return(
             // Render a form
@@ -98,15 +98,15 @@ class StoreCheckout extends React.Component{
     }
 }
 
-StoreCheckout.propTypes = {
-  // Name of user, initially empty string
-  name: propTypes.string.isRequired,
-  // Telephone of user, initially empty string
-  telephone: propTypes.string.isRequired,
-  // Error for name, if name is not valid, this string will have an error message
-  nameError: propTypes.string.isRequired,
-   // Error for telephone, if telephone is not valid, this string will have an error message
-   telephoneError: propTypes.string.isRequired
-};
+// StoreCheckout.propTypes = {
+//   // Name of user, initially empty string
+//   name: propTypes.string.isRequired,
+//   // Telephone of user, initially empty string
+//   telephone: propTypes.string.isRequired,
+//   // Error for name, if name is not valid, this string will have an error message
+//   nameError: propTypes.string.isRequired,
+//    // Error for telephone, if telephone is not valid, this string will have an error message
+//   telephoneError: propTypes.string.isRequired
+// };
 
 export default StoreCheckout;

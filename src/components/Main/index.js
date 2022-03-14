@@ -13,7 +13,8 @@ render() {
 
 <div className="mainPage">
   <h1 className="mainH1">Welcome to Bubblify</h1>
-    <img className="mainLogo" src={ logo } alt="logo"></img>
+    <img className="mainLogo" src={ logo }></img>
+
 </div>
 
 
