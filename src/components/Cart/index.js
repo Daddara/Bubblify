@@ -1,17 +1,39 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./styles.css";
+import {connect} from "react-redux";
+import {getOrder} from "../../actions/getOrderAction";
+import {setCounter} from '../../actions/getCartAction';
 
 
 class Cart extends React.Component{
     state ={
         cart: JSON.parse(localStorage.getItem('cart')),
-        user: JSON.parse(localStorage.getItem('user'))
+        user: JSON.parse(localStorage.getItem('user')),
+        order: null
     }
+    componentDidMount(){
+        if(this.state.user !== null){
+            this.props.getOrder(this.state.user.telephone);
+        }
+    }
+   
+    getPrev(e){
+        console.log(this.props.order.data);
+        console.log(this.props.order.data.length);
+        let len = this.props.order.data.length;
+        console.log(this.props.order.data[len -1 ]);
+        let data = this.props.order.data[len -1 ];
+        localStorage.setItem('cart', JSON.stringify(data));
+        let oldCart = JSON.parse(localStorage.getItem('cart'));
+        let oldCartlen = oldCart.length;
+        this.props.setCounter(oldCartlen);
+        this.setState({ cart : oldCart });
+    }
+
     
     render(){
         console.log(this.state.cart);
-        console.log(this.state.user);
         if(this.state.cart !== null){
         return(
             // Render all items from the "cart" section in localstorage
@@ -52,10 +74,27 @@ class Cart extends React.Component{
         return (
             <div>
                 <h1 className="h1Bundles">No items in cart</h1>
-                { this.state.user !== null ? (<p>Hello</p>) : null }
+                { this.state.user !== null ? (<div><p>Hello</p>
+                    <input
+                    type="submit"
+                    value="Get previous order"
+                    className="Button"
+                    onClick={e => this.getPrev(e)}
+                    />
+                </div>
+                ) : null }
             </div>
         )
     }
 }}
 
-export default Cart;
+const mapStateToProps = (state) => {
+    return {order: state.order, counter: state.counter}
+  }
+  
+  const mapDispatchToProps = {
+    getOrder,
+    setCounter
+  }
+
+  export default connect(mapStateToProps, mapDispatchToProps) (Cart);
