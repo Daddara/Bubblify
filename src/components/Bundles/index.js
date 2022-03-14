@@ -64,7 +64,6 @@ class Bundles extends React.Component{
   }
 
   render() {
-    console.log(this.props);
         return(
         <div className="bundlegod">
         <h1 className="h1Bundles">Bundles</h1>

@@ -45,8 +45,10 @@ class RemoteSelectItem extends React.Component {
 };
 
 RemoteSelectItem.propTypes = {
+  // Function called when selected
   onSelect: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  // Value selected from the user, initially default value
   value: PropTypes.string.isRequired,
   /* Is used to populate options for this select */
   getData: PropTypes.func.isRequired,
