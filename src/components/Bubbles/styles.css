@@ -4,6 +4,7 @@
     grid-auto-rows: minmax(30px, auto);
     gap: 60px;
     margin: 100px;
+    position: block;
 }
 
 .Heading {
@@ -18,7 +19,7 @@
 }
 
 .BubbleImg {
-    filter: drop-shadow(20px 10px 4px rgb(60, 60, 60));
+    /* filter: drop-shadow(20px 10px 4px rgb(60, 60, 60)); */
 }
 
 .Bubbles {
