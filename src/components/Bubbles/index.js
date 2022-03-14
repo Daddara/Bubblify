@@ -95,20 +95,22 @@ const mapDispatchToProps = {
 }
 
 Bubbles.propTypes = {
-
-    // A single bubble provided by props
-    bubble: propTypes.shape({
-        // The id of the bubble
-        id: propTypes.number.isRequired,
-        // The name of the bubble
-        name: propTypes.string.isRequired,
-        // A short description of the bubble
-        description: propTypes.string.isRequired,
-        // The price of the bubble
-        price: propTypes.number.isRequired,
-        // An image url of the bubble
-        image: propTypes.string.isRequired
-    })
-}
+    
+    // Bubble object, with data as array of all bundles
+    bubbles: propTypes.shape({
+      // Array of all the bubbles from api
+      data: propTypes.arrayOf(propTypes.shape({
+          // Bubble id
+          id: propTypes.number.isRequired,
+          // Name of the bubb;e
+          name: propTypes.string.isRequired,
+          // Price of the bubble
+          price: propTypes.number.isRequired,
+          // A description of the bubble
+          description: propTypes.string.isRequired
+      })
+      ).isRequired,
+    }).isRequired,
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps) (Bubbles);

@@ -21,7 +21,8 @@ class BubbleDetails extends React.Component{
     }
     
     render(){
-        const bubble = this.props.location.bubble
+        const bubble = this.props.location.bubble;
+        console.log(this.props)
         return (
             <div className = "Bubble">
                 <div key={bubble.id} className="Details">
@@ -44,19 +45,20 @@ class BubbleDetails extends React.Component{
     }}
 
     BubbleDetails.propTypes = {
-        // A single bubble provided by props
+        // Bubble object, with data as array of all bundles
+    location: propTypes.shape({
+        // Array of all the bubbles from api
         bubble: propTypes.shape({
-            // The id of the bubble
+            // Bubble id
             id: propTypes.number.isRequired,
-            // The name of the bubble
+            // Name of the bubb;e
             name: propTypes.string.isRequired,
-            // A short description of the bubble
-            description: propTypes.string.isRequired,
-            // The price of the bubble
+            // Price of the bubble
             price: propTypes.number.isRequired,
-            // An image url of the bubble
-            image: propTypes.string.isRequired
-        }).isRequired
+            // A description of the bubble
+            description: propTypes.string.isRequired
+        }).isRequired,
+      }).isRequired,
     }
 
 export default BubbleDetails;
