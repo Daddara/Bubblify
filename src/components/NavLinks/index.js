@@ -10,14 +10,6 @@ import { getCounter } from '../../actions/getCartAction'
 
 
 
-// if(localStorage.getItem('cart') == null){
-//     var num = 0;
-// }
-// var numArray = JSON.parse(localStorage.getItem('cart'));
-// console.log(numArray)
-
-
-
 
 class NavLinks extends React.Component{
     state ={
@@ -25,7 +17,6 @@ class NavLinks extends React.Component{
         // num: JSON.parse(localStorage.getItem('cart')).length
     }
     render(){
-        console.log(this.props);
         return(
           
     <ul className="nav-links">

@@ -16,8 +16,7 @@ return count
 
 export default function counterReducer(state=counterfunc(), action) {
   switch (action.type) {
-    case INCREMENT: 
-      console.log(`Inside the reducer. Number is: ${action.payload}, action type: ${action.type}`);
+    case INCREMENT:
       return state + action.payload;
     case GET_COUNTER:
       return action.payload;
