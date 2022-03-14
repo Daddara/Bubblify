@@ -47,7 +47,7 @@ class OrderReview extends React.Component{
                 );
                 }
                 })}
-                <NavLink className="checkoutbtn" to="/cart/checkout" exact>Proceed to Checkout</NavLink>  
+                <NavLink className="checkoutbtn" to="/order/success" exact>Confirm Order</NavLink>  
             </div>
         </div>  
 

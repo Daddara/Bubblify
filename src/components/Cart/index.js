@@ -74,7 +74,7 @@ class Cart extends React.Component{
         return (
             <div>
                 <h1 className="h1Bundles">No items in cart</h1>
-                { this.state.user !== null ? (<div><p>Hello</p>
+                { this.state.user !== null ? (<div>
                     <input
                     type="submit"
                     value="Get previous order"
