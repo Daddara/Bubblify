@@ -12,7 +12,7 @@ class OrderReview extends React.Component{
 
  
     render(){
-
+        console.log(this.props);
         return(
             // Render here a sort of list of the cart
             

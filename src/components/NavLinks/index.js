@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import cart from "./../../whitecart.png";
 import logo from "./../../logo.PNG";
 import {connect} from "react-redux";
+import propTypes from 'prop-types';
 import { getCounter } from '../../actions/getCartAction'
 import "./styles.css";
 
@@ -69,5 +70,14 @@ const mapStateToProps = (state) => {
   const mapDispatchToProps = {
       getCounter
   }
+
+  NavLinks.propTypes = {
+      // navlink array
+        Navlink: propTypes.arrayOf({
+            //counter for cart
+            counter: propTypes.number.isRequired
+        }).isRequired
+    }
+
   
   export default connect(mapStateToProps, mapDispatchToProps) (NavLinks);

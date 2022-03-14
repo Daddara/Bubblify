@@ -10,6 +10,7 @@ class Main extends React.Component{
 
 render() {
   return(
+
 <div className="mainPage">
   <h1 className="mainH1">Welcome to Bubblify</h1>
     <img className="mainLogo" src={ logo } alt="logo"></img>
