@@ -23,8 +23,18 @@ class Cart extends React.Component{
         let data = this.props.order.data[len -1 ];
         localStorage.setItem('cart', JSON.stringify(data));
         let oldCart = JSON.parse(localStorage.getItem('cart'));
-        let oldCartlen = oldCart.length;
-        this.props.setCounter(oldCartlen);
+        var count = 0;
+        for(let i = 0; i < oldCart.length; i++){
+            console.log(oldCart[i]);
+            if(oldCart[i].hasOwnProperty('bubble')){
+            count += oldCart[i].bubble.counter;
+            }
+            else{
+            count += oldCart[i].bundle.counter;
+            }
+        }
+    
+        this.props.setCounter(count);
         this.setState({ cart : oldCart });
     }
 

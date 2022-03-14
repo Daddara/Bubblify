@@ -165,7 +165,15 @@ DeliverCheckout.propTypes = {
   // Error for name, if name is not valid, this string will have an error message
   nameError: propTypes.string.isRequired,
   // Error for telephone, if telephone is not valid, this string will have an error message
-  telephoneError: propTypes.string.isRequired
+  telephoneError: propTypes.string.isRequired,
+  // Error for address, if address is not valid, this string will have an error message
+  addressError: propTypes.string.isRequired,
+  // Error for region, if region is not valid, this string will have an error message
+  regionError: propTypes.string.isRequired,
+  // Error for city, if city is not valid, this string will have an error message
+  cityError: propTypes.string.isRequired,
+  // Error for postal code, if postal code is not valid, this string will have an error message
+  postCodeError: propTypes.string.isRequired
 };
 
 export default DeliverCheckout;
