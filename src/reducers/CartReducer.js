@@ -1,5 +1,5 @@
 
-import { INCREMENT, GET_COUNTER} from '../constants';
+import { INCREMENT, GET_COUNTER, SET_COUNTER} from '../constants';
 
 
 function counterfunc () {
@@ -20,6 +20,8 @@ export default function counterReducer(state=counterfunc(), action) {
       console.log(`Inside the reducer. Number is: ${action.payload}, action type: ${action.type}`);
       return state + action.payload;
     case GET_COUNTER:
+      return action.payload;
+    case SET_COUNTER:
       return action.payload;
     default: return state;
   }

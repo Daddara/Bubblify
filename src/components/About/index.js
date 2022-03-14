@@ -16,14 +16,12 @@ class About extends React.Component{
             </div>
             <div className="aboutTextContainer">
             <p className="aboutText">
-            A major catastrophe has just happened! All the key players in the bubble industry have been 
-relying on the same manufacturer which just recently went through a really bad lawsuit which 
-resulted in them going bankrupt! It is already May and the summer is almost here and kids want 
-their bubbles! A new emerging company called Bubblify have decided to jump on this chance 
-and become the new big player in the bubble industry. They want their business to go mainly 
-through their website, which has need been made yet... That’s where you come in! You are going 
-to build a website for them before the summer season begins. Please, do not disappoint them nor 
-all the soon-to-be bubbleless children... </p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                    sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
             </div>
         </div>
         )}

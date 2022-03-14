@@ -5,10 +5,13 @@ import styles from "./styles.css";
 
 class Cart extends React.Component{
     state ={
-        cart: JSON.parse(localStorage.getItem('cart'))
+        cart: JSON.parse(localStorage.getItem('cart')),
+        user: JSON.parse(localStorage.getItem('user'))
     }
+    
     render(){
         console.log(this.state.cart);
+        console.log(this.state.user);
         if(this.state.cart !== null){
         return(
             // Render all items from the "cart" section in localstorage
@@ -49,6 +52,7 @@ class Cart extends React.Component{
         return (
             <div>
                 <h1 className="h1Bundles">No items in cart</h1>
+                { this.state.user !== null ? (<p>Hello</p>) : null }
             </div>
         )
     }

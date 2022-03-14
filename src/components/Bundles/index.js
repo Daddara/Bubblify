@@ -2,6 +2,7 @@ import React from "react";
 // import { NavLink } from 'react-router-dom';
 import {connect} from "react-redux";
 import "./styles.css";
+import { Redirect } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 import { getBundles } from '../../actions/getBundlesAction';
 import { incrementCounter} from '../../actions/getCartAction';
@@ -13,6 +14,8 @@ class Bundles extends React.Component{
     bundles: this.props.bundles.data,
     bubbles: this.props.bubbles.data,
     price: 0,
+    redirect: false,
+    popup: false
   }
 
   getBubble(item){
@@ -56,6 +59,15 @@ class Bundles extends React.Component{
     
     localStorage.setItem('cart', JSON.stringify(prevData));
     console.log(localStorage.getItem('cart'));
+
+    if(this.state.popup === false){
+      if (window.confirm("Would you like to proceed to checkout?") == true) {
+          // text = "You pressed OK!";
+          this.setState({ redirect: true });
+          console.log("GOGo");    
+      }
+      this.setState({ popup: true });
+  }
   }
 
   render() {
@@ -131,6 +143,7 @@ class Bundles extends React.Component{
         </div>
         
       </div>
+      { this.state.redirect ? (<Redirect exact push to="/cart/checkout"/>) : null }
       </div>
 
 

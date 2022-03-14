@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import {connect} from "react-redux";
 import * as apiService from '../../services/apiService';
 import {getOrder} from '../../actions/getOrderAction';
-import {getCounter} from '../../actions/getCartAction';
+import {setCounter} from '../../actions/getCartAction';
 
 
 
@@ -11,23 +11,24 @@ class OrderSuccess extends React.Component{
 
     componentDidMount(){
         var cart = JSON.parse(localStorage.getItem('cart'));
-        if(localStorage.getItem('deliveryUser') !== null){
-            var user = JSON.parse(localStorage.getItem('deliveryUser'));
+        if(localStorage.getItem('user') !== null){
+            var user = JSON.parse(localStorage.getItem('user'));
             console.log(user);
         }
-        else if(localStorage.getItem('storeUser') !== null){
-            var user = JSON.parse(localStorage.getItem('storeUser'));
-            console.log(user);
-        }
+        // else if(localStorage.getItem('storeUser') !== null){
+        //     var user = JSON.parse(localStorage.getItem('storeUser'));
+        //     console.log(user);
+        // }
         if(user){
             apiService.createOrder(user.telephone,cart);
         }
-        this.props.counter = 0;
+        localStorage.removeItem('cart');
+        this.props.setCounter(0);
+        // this.props.counter = 0;
 
     }
 
     render(){
-        this.processOrder();
         return (
             <h1 className="h1Bundles">Thank You!</h1>
         )
@@ -39,6 +40,8 @@ const mapStateToProps = (state) => {
   
   const mapDispatchToProps = {
       getOrder,
+      setCounter,
+      
     
   }
 

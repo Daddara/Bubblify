@@ -3,14 +3,18 @@ import {connect} from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { getBubbles } from "../../actions/getBubblesAction";
 import { incrementCounter} from '../../actions/getCartAction';
+import { Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import "./styles.css";
+import { toHaveFocus } from "@testing-library/jest-dom/dist/matchers";
 
 
 class Bubbles extends React.Component{
     
     state = {
-        bubbles: this.props.bubbles.data
+        bubbles: this.props.bubbles.data,
+        redirect: false,
+        popup: false
     }
 
     changeText = (text) => {
@@ -45,6 +49,16 @@ class Bubbles extends React.Component{
         }
         localStorage.setItem('cart', JSON.stringify(prevData));
         console.log(localStorage.getItem('cart'));
+        // let text;
+        if(this.state.popup === false){
+            if (window.confirm("Would you like to proceed to checkout?") == true) {
+                // text = "You pressed OK!";
+                this.setState({ redirect: true });
+                console.log("GOGo");    
+            }
+            this.setState({ popup: true });
+        }
+        
     }
 
 
@@ -70,6 +84,7 @@ class Bubbles extends React.Component{
                     )
                 })
             }
+              { this.state.redirect ? (<Redirect exact push to="/cart/checkout"/>) : null }
         </div>
     )}
 }
