@@ -5,13 +5,15 @@
     background-color:  rgb(233, 232, 232);
     height:max-content;
     justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    padding-top:2rem;
     
 }
 .mainLogo{
     max-width:60%;
-    margin-left:20%;
-
 }
+
 .nav-links{
     margin-bottom: 0;
 }
