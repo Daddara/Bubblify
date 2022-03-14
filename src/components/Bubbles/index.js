@@ -3,14 +3,18 @@ import {connect} from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { getBubbles } from "../../actions/getBubblesAction";
 import { incrementCounter} from '../../actions/getCartAction';
+import { Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 import "./styles.css";
+import { toHaveFocus } from "@testing-library/jest-dom/dist/matchers";
 
 
 class Bubbles extends React.Component{
     
     state = {
-        bubbles: this.props.bubbles.data
+        bubbles: this.props.bubbles.data,
+        redirect: false,
+        popup: false
     }
 
     changeText = (text) => {
@@ -20,8 +24,6 @@ class Bubbles extends React.Component{
     addToCart(e, bubble){
         e.preventDefault();
         this.props.incrementCounter(1);
-        console.log("Adding to cart..");
-        console.log(bubble)
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
             localStorage.setItem('cart', '[]');
@@ -33,7 +35,6 @@ class Bubbles extends React.Component{
         for (let i = 0; i < prevData.length; i++) {
             if(prevData[i].hasOwnProperty('bubble')){
             if(bubble.id === prevData[i].bubble.id){
-            console.log("GOTTEM");
             prevData[i].bubble.counter++;
             prevData[i].bubble.price += bubble.price;
             foundSame = true;
@@ -44,7 +45,15 @@ class Bubbles extends React.Component{
         prevData.push(the_bubble);
         }
         localStorage.setItem('cart', JSON.stringify(prevData));
-        console.log(localStorage.getItem('cart'));
+        // let text;
+        if(this.state.popup === false){
+            if (window.confirm("Would you like to proceed to checkout?") == true) {
+                // text = "You pressed OK!";
+                this.setState({ redirect: true });
+            }
+            this.setState({ popup: true });
+        }
+        
     }
 
 
@@ -54,7 +63,9 @@ class Bubbles extends React.Component{
             {this.props.bubbles && this.props.bubbles.data.map((bubble) => {
                 return (
                     <div key={bubble.id} className="Bubbles">
-                            <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
+                            <div className="imagediv">
+                                <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
+                            </div>
                         <div>
                             <h2 className="Heading">{bubble.name}</h2>
                         </div>
@@ -70,6 +81,7 @@ class Bubbles extends React.Component{
                     )
                 })
             }
+              { this.state.redirect ? (<Redirect exact push to="/cart/checkout"/>) : null }
         </div>
     )}
 }

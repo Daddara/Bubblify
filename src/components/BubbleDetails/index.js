@@ -11,7 +11,6 @@ class BubbleDetails extends React.Component{
 
     addToCart(e, bubble){
         e.preventDefault();
-        console.log("Adding to cart..");
         this.props.incrementCounter(1);
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
@@ -21,7 +20,6 @@ class BubbleDetails extends React.Component{
         var the_bubble = {"bubble" : bubble}
         prevData.push(the_bubble);
         localStorage.setItem('cart', JSON.stringify(prevData));
-        console.log(localStorage.getItem('cart'));
     }
     
     render(){

@@ -45,14 +45,12 @@ class StoreCheckout extends React.Component{
       }
     
       submitForm(e) {
-        console.log(this);
         e.preventDefault();
         if (!this.validateForm()) {
           toastr.error('Please enter the reqiured fields', 'Failed!');
         } else {
-          
-          console.log(this.state.fields);
-          localStorage.setItem('storeUser', JSON.stringify(this.state.fields));
+        
+          localStorage.setItem('user', JSON.stringify(this.state.fields));
           toastr.success('The form was successfully submitted!', 'Success!');
           this.setState({ redirect: true });
           // Redirect

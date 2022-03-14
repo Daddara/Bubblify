@@ -1,5 +1,5 @@
 
-import { INCREMENT, GET_COUNTER} from '../constants';
+import { INCREMENT, GET_COUNTER, SET_COUNTER} from '../constants';
 
 
 function counterfunc () {
@@ -16,10 +16,11 @@ return count
 
 export default function counterReducer(state=counterfunc(), action) {
   switch (action.type) {
-    case INCREMENT: 
-      console.log(`Inside the reducer. Number is: ${action.payload}, action type: ${action.type}`);
+    case INCREMENT:
       return state + action.payload;
     case GET_COUNTER:
+      return action.payload;
+    case SET_COUNTER:
       return action.payload;
     default: return state;
   }
