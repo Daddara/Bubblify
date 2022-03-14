@@ -10,6 +10,7 @@ import styles from "./styles.css";
 import propTypes from 'prop-types';
 
 
+
 class DeliverCheckout extends React.Component{
     state = {
         redirect: false,
@@ -167,5 +168,6 @@ DeliverCheckout.propTypes = {
   // Error for telephone, if telephone is not valid, this string will have an error message
   telephoneError: propTypes.string.isRequired
 };
+
 
 export default DeliverCheckout;
