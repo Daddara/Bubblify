@@ -31,22 +31,27 @@ class OrderSuccess extends React.Component{
 
     render(){
         return (
+            <div>
             <div className="thankyoubox">
                 <h1 className="h1Bundles">Thank You, {this.state.user.name}!</h1>
                 <h1 className="h1Bundles">Your order will now be processed!</h1>
             </div>
+            <div className="button">
+                <NavLink className="checkoutbtn" to="/" exact>Back Home</NavLink>
+            </div>
+            </div>
+          
+        
         )
     }
 }
 const mapStateToProps = (state) => {
     return {order: state.order, counter: state.counter}
-  }
+    }
   
   const mapDispatchToProps = {
       getOrder,
       setCounter,
-      
-    
   }
 
 export default connect(mapStateToProps, mapDispatchToProps) (OrderSuccess);
