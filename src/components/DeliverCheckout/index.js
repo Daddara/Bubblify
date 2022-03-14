@@ -6,7 +6,6 @@ import Form from '../Form';
 import Input from '../Input';
 import RemoteSelectItem from "../RemoteSelectItem";
 import countryService from "../../services/countryService";
-import styles from "./styles.css";
 
 
 class DeliverCheckout extends React.Component{
@@ -147,5 +146,6 @@ class DeliverCheckout extends React.Component{
         )
     }
 }
+
 
 export default DeliverCheckout;
