@@ -18,12 +18,7 @@ class OrderSuccess extends React.Component{
         var cart = JSON.parse(localStorage.getItem('cart'));
         if(localStorage.getItem('user') !== null){
             var user = JSON.parse(localStorage.getItem('user'));
-            console.log(user);
         }
-        // else if(localStorage.getItem('storeUser') !== null){
-        //     var user = JSON.parse(localStorage.getItem('storeUser'));
-        //     console.log(user);
-        // }
         if(user){
             apiService.createOrder(user.telephone,cart);
         }

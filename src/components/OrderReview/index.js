@@ -11,13 +11,9 @@ class OrderReview extends React.Component{
 
     }
 
-    submit(e){
-        console.log("Submit");
-    };
-
  
     render(){
-        console.log("hello", this.state.user)
+
         return(
             // Render here a sort of list of the cart
             
@@ -38,7 +34,6 @@ class OrderReview extends React.Component{
                 );
                 }
                 else{
-                    console.log("hello")
                     return (
                     <div key={item.bubble.id} className="CartItem">
                         <div>
@@ -49,6 +44,7 @@ class OrderReview extends React.Component{
                 );
                 }
                 })}
+
                   <div className="infobox">
                         <h2>Your Information</h2>
                         <p>Name: {this.state.user.name}</p>
@@ -60,6 +56,7 @@ class OrderReview extends React.Component{
 
                     </div>
                 <NavLink className="checkoutbtn" onClick={e => this.submit(e)} to="/order/success" exact>Confirm Order</NavLink>  
+
             </div>
         </div>  
 

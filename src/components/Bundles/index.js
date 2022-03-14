@@ -22,7 +22,6 @@ class Bundles extends React.Component{
     var result = this.state.bubbles.find(function(bubble) {
         return bubble.id == item;
       });
-    //   console.log(result);
       return result;
   }
 
@@ -33,8 +32,6 @@ class Bundles extends React.Component{
   addToCart(e, bundle){
     e.preventDefault();
     this.props.incrementCounter(1);
-    console.log(this.props.counter);
-    console.log("Adding to cart..");
     // Check if cart exists, otherwise create a new array for cart
     if(localStorage.getItem('cart') == null){
         localStorage.setItem('cart', '[]');
@@ -46,7 +43,6 @@ class Bundles extends React.Component{
     for (let i = 0; i < prevData.length; i++) {
       if(prevData[i].hasOwnProperty('bundle')){
         if(bundle.id === prevData[i].bundle.id){
-          console.log("GOTTEM");
           prevData[i].bundle.counter++;
           prevData[i].bundle.price += bundle.price;
           foundSame = true;
@@ -58,22 +54,17 @@ class Bundles extends React.Component{
     }
     
     localStorage.setItem('cart', JSON.stringify(prevData));
-    console.log(localStorage.getItem('cart'));
 
     if(this.state.popup === false){
       if (window.confirm("Would you like to proceed to checkout?") == true) {
           // text = "You pressed OK!";
           this.setState({ redirect: true });
-          console.log("GOGo");    
       }
       this.setState({ popup: true });
   }
   }
 
   render() {
-    // const bubbles = useSelector(state => state.bubbles);
-    // console.log("MY BUNDLES: ", this.state.bundles);
-    console.log("MY Bubbles: ", this.state.bubbles);
     
     return(
         <div className="bundlegod">
