@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import propTypes from 'prop-types';
 import {connect} from "react-redux";
 import { incrementCounter } from '../../actions/getCartAction';
 
@@ -44,6 +45,23 @@ class BubbleDetails extends React.Component{
             </div>
         )      
     }}
+
+    BubbleDetails.propTypes = {
+        // A single bubble provided by props
+        bubble: propTypes.shape({
+            // The id of the bubble
+            id: propTypes.number.isRequired,
+            // The name of the bubble
+            name: propTypes.string.isRequired,
+            // A short description of the bubble
+            description: propTypes.string.isRequired,
+            // The price of the bubble
+            price: propTypes.number.isRequired,
+            // An image url of the bubble
+            image: propTypes.string.isRequired
+        }).isRequired
+    }
+
 
     const mapStateToProps = (state) => {
         return {counter: state.counter}

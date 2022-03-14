@@ -96,11 +96,18 @@ const mapDispatchToProps = {
 
 Bubbles.propTypes = {
 
+    // A single bubble provided by props
     bubble: propTypes.shape({
-        name: propTypes.string,
-        description: propTypes.string,
-        price: propTypes.number,
-        image: propTypes.string
+        // The id of the bubble
+        id: propTypes.number.isRequired,
+        // The name of the bubble
+        name: propTypes.string.isRequired,
+        // A short description of the bubble
+        description: propTypes.string.isRequired,
+        // The price of the bubble
+        price: propTypes.number.isRequired,
+        // An image url of the bubble
+        image: propTypes.string.isRequired
     })
 }
 

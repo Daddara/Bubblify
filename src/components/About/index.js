@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from 'prop-types';
 import "./styles.css";
-import logo from "./../../logo.PNG"
+import logo from "./../../logo.PNG";
 
 
 class About extends React.Component{
