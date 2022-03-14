@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.css";
 import propTypes from 'prop-types';
+import {connect} from "react-redux";
+import { incrementCounter } from '../../actions/getCartAction';
 
 class BubbleDetails extends React.Component{
     
@@ -10,6 +12,7 @@ class BubbleDetails extends React.Component{
 
     addToCart(e, bubble){
         e.preventDefault();
+        this.props.incrementCounter(1);
         // Check if cart exists, otherwise create a new array for cart
         if(localStorage.getItem('cart') == null){
             localStorage.setItem('cart', '[]');
@@ -59,4 +62,12 @@ class BubbleDetails extends React.Component{
         }).isRequired
     }
 
-export default BubbleDetails;
+
+    const mapStateToProps = (state) => {
+        return {counter: state.counter}
+      }
+      const mapDispatchToProps = {
+        incrementCounter
+    }
+
+export default connect(mapStateToProps, mapDispatchToProps ) (BubbleDetails);

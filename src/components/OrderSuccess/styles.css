@@ -1,0 +1,14 @@
+.thankyoubox {
+    max-width: 1000px;
+    width: 100%;
+    margin: 100px auto;
+    box-shadow: 0 0 10px rgb(146, 146, 146);
+    border: 2px solid lightgray;
+    background-color: rgb(0, 216, 25);
+}
+
+.button{
+    display:grid;
+    justify-content:center;
+    align-items:center;
+}

@@ -68,34 +68,21 @@ class Bundles extends React.Component{
         return(
         <div className="bundlegod">
         <h1 className="h1Bundles">Bundles</h1>
-  
-        {/* Fetch data from API */}
-  
         <div>
-          {/* Button to fetch data /*}
-        </div>
-  
-        {/* Display data from API */}
         <div className="bundles">
           {this.state.bundles &&
             this.state.bundles.map((bundle, index) => {
-              // id, name, items
+
               this.state.price = 0;
               bundle.bubbleLis = [];
               return (
                 <div className="bundle" key={bundle.id}>
-                    {/* <div className="imgdiv">
-                      <img src={bundle.img} className="bundleimage"/>
-                    </div> */}
-                  
+
                     
                 <h2 className="bundleName">{bundle.name}</h2>
                 <div className="nextbundlediv">
                     {bundle.items &&
-                bundle.items.map((item, index) => {
-                // id, name, description, img
-                // get bubble here with the id from key! Stupid key btw
-                
+                bundle.items.map((item, index) => {                
                 let bubble = this.getBubble(item);
                 this.addPrice(bubble);
                 bundle.bubbleLis.push(bubble);
@@ -107,26 +94,21 @@ class Bundles extends React.Component{
                         <div className="imgdiv">
                         <img src={bubble.image} className="bundlebubbleimg"/>
                         </div>
-                    <div className="textbox">
-                        
-                    <h2>{bubble.name}</h2>
-                        
+                    <div className="textbox">  
+                        <h2>{bubble.name}</h2>  
                     </div>
                     </div>
                 );
-                
                 })}
-                  </div>
-                  {/* Do stuff here, add div to make sexy, colums */}
-                  <div className="pricecart">
+                </div>
+                <div className="pricecart">
                         <p className="addedprice">Price: {this.state.price}</p>
 
                     <button onClick={ e => this.addToCart(e, bundle)} className="cartbtn">
                         <p>Add to cart</p>
                     </button>
-                
                 </div>
-                 </div>
+                </div>
               );
             })}
             
@@ -173,6 +155,7 @@ Bundles.propTypes = {
   // Counter for the cart, when add to cart is clicked, increment
   counter: propTypes.number.isRequired
 }
+
 
 const mapStateToProps = (state) => {
   return {bundles: state.bundles, bubbles: state.bubbles, counter: state.counter}
