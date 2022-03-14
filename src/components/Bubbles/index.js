@@ -55,15 +55,15 @@ class Bubbles extends React.Component{
         }
         
     }
-
-
     render() {
         return (
             <div className = "AllBubbles">
             {this.props.bubbles && this.props.bubbles.data.map((bubble) => {
                 return (
                     <div key={bubble.id} className="Bubbles">
-                            <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
+                            <div className="imagediv">
+                                <img className="BubbleImg" src={bubble.image} alt={bubble.name} />
+                            </div>
                         <div>
                             <h2 className="Heading">{bubble.name}</h2>
                         </div>

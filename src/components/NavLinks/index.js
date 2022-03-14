@@ -1,20 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./styles.css";
 import cart from "./../../whitecart.png";
 import logo from "./../../logo.PNG";
 import {connect} from "react-redux";
 import { getCounter } from '../../actions/getCartAction'
-
-
-
+import "./styles.css";
 
 
 
 class NavLinks extends React.Component{
     state ={
         
-        // num: JSON.parse(localStorage.getItem('cart')).length
     }
     render(){
         return(

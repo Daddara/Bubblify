@@ -4,14 +4,13 @@ import "./styles.css";
 import logo from "./../../logo.PNG";
 
 
-
 class About extends React.Component{
 
   render() {
     return (
         <div className="aboutContainer">
             <div className="aboutHeader">
-            <h1 className="aboutTitle" >About us</h1>
+            <h1 className="aboutTitle">About us</h1>
             <img className="aboutImg" src={ logo }></img>
             </div>
             <div className="aboutTextContainer">

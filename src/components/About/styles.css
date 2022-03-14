@@ -16,7 +16,7 @@
 .aboutTitle{
     color:black;
     grid-area:aboutTitle;
-    padding-top: 5rem;
+    padding-top: 1em;
 }
 
 .aboutImg{
@@ -27,6 +27,6 @@
 }
 
 .aboutText{
+    display: grid;
     width:70%;
-
 }
