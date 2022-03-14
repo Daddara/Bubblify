@@ -23,16 +23,12 @@ function App() {
   const dispatch = useDispatch();
     
 	const bubbles = useSelector(state => state.bubbles);
-    const onRefresh = React.useCallback(async () => {
+    const bubblesGetter = React.useCallback(async () => {
 		await dispatch(getBubbles());
     // await dispatch(getBubbles());
 	  }, [bubbles]);
     
-    const bubble = useSelector(state => state.bubble);
-    const singleBubble = React.useCallback(async () => {
-		await dispatch(getBubble(1));
-    // await dispatch(getBubbles());
-	  }, [bubble]);
+  
 
     const bundles = useSelector(state => state.bundles);
     const bundleGetter = React.useCallback(async () => {
@@ -41,8 +37,7 @@ function App() {
 	  }, [bundles]);
 
     useEffect(()=>{
-        onRefresh();
-        singleBubble();
+      bubblesGetter();
         bundleGetter();
         }, []);
   

@@ -1,9 +1,8 @@
 import React from "react";
-// import { NavLink } from 'react-router-dom';
 import {connect} from "react-redux";
 import "./styles.css";
 import { Redirect } from 'react-router-dom';
-// import { Redirect } from 'react-router-dom';
+import propTypes, { bool, shape } from 'prop-types';
 import { getBundles } from '../../actions/getBundlesAction';
 import { incrementCounter} from '../../actions/getCartAction';
 
@@ -65,8 +64,8 @@ class Bundles extends React.Component{
   }
 
   render() {
-    
-    return(
+    console.log(this.props);
+        return(
         <div className="bundlegod">
         <h1 className="h1Bundles">Bundles</h1>
   
@@ -142,16 +141,38 @@ class Bundles extends React.Component{
 
   }
 }
-// const mapStateToProps = (state) => {
-//   return {bundle: state.bundle}
-// }
-
-// const mapDispatchToProps = {
-//   getbundle,
-//   deletebundle
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps) (bundle);
+Bundles.propTypes = {
+  // Bundle object
+  bundles: propTypes.shape({
+    // Array of all the bundles from api
+    data: propTypes.arrayOf(propTypes.shape({
+      // Bundle id
+        id: propTypes.number.isRequired,
+        // Name of the bundle
+        name: propTypes.string.isRequired,
+        // Array of bubble id's
+        items: propTypes.array.isRequired,
+    })
+    ).isRequired,
+  }).isRequired,
+  // Bubble object, with data as array of all bundles
+  bubbles: propTypes.shape({
+    // Array of all the bubbles from api
+    data: propTypes.arrayOf(propTypes.shape({
+        // Bubble id
+        id: propTypes.number.isRequired,
+        // Name of the bubb;e
+        name: propTypes.string.isRequired,
+        // Price of the bubble
+        price: propTypes.number.isRequired,
+        // A description of the bubble
+        description: propTypes.string.isRequired
+    })
+    ).isRequired,
+  }).isRequired,
+  // Counter for the cart, when add to cart is clicked, increment
+  counter: propTypes.number.isRequired
+}
 
 const mapStateToProps = (state) => {
   return {bundles: state.bundles, bubbles: state.bubbles, counter: state.counter}
