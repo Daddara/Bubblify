@@ -69,7 +69,7 @@ class DeliverCheckout extends React.Component{
         } else {
           
           console.log(this.state.fields);
-          localStorage.setItem('deliveryUser', JSON.stringify(this.state.fields));
+          localStorage.setItem('user', JSON.stringify(this.state.fields));
           toastr.success('The form was successfully submitted!', 'Success!');
           this.setState({ redirect: true });
           // Redirect
