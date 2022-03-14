@@ -6,6 +6,9 @@ import Form from '../Form';
 import Input from '../Input';
 import RemoteSelectItem from "../RemoteSelectItem";
 import countryService from "../../services/countryService";
+import styles from "./styles.css";
+import propTypes from 'prop-types';
+
 
 
 class DeliverCheckout extends React.Component{
@@ -146,6 +149,25 @@ class DeliverCheckout extends React.Component{
         )
     }
 }
+
+DeliverCheckout.propTypes = {
+  // Name of user, initially empty string
+  name: propTypes.string.isRequired,
+  // Telephone of user, initially empty string
+  telephone: propTypes.string.isRequired,
+  // Address of user, initially empty string
+  address: propTypes.string.isRequired,
+  // Region of user, initially default, selected
+  region: propTypes.string.isRequired,
+  // City of user, initially empty string, selected
+  city: propTypes.string.isRequired,
+  // Postal code of user, initially empty string
+  postCode: propTypes.string.isRequired,
+  // Error for name, if name is not valid, this string will have an error message
+  nameError: propTypes.string.isRequired,
+  // Error for telephone, if telephone is not valid, this string will have an error message
+  telephoneError: propTypes.string.isRequired
+};
 
 
 export default DeliverCheckout;

@@ -8,9 +8,20 @@ function counterfunc () {
 }
 else{
   var prevData = JSON.parse(localStorage.getItem('cart'));
-  var count = prevData.length;
+  var count = 0;
+  for(let i = 0; i < prevData.length; i++){
+    console.log(prevData[i]);
+    if(prevData[i].hasOwnProperty('bubble')){
+      count += prevData[i].bubble.counter;
+    }
+    else{
+      count += prevData[i].bundle.counter;
+    }
+    
+  }
+  // var count = prevData.length;
 }
-return count
+return count;
 }
 
 
