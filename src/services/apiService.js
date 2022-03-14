@@ -32,5 +32,6 @@ export const createOrder = async (phoneNumber, order) => {
 
 export const getOrder = async(phoneNumber) => {
 	const order = await axios.get(api + '/orders/' + phoneNumber);
+	console.log(order);
 	return order;
 }
