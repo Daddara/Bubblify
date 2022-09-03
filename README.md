@@ -46,15 +46,15 @@ All the functionality in the assignment is enlisted here below: 
   - About us 
   - Cart 
 
-**•** **(35%)** A user needs to go through the following steps when buying products:  
+• **(35%)** A user needs to go through the following steps when buying products:  
 
 **1.** Select one or more products from the product section or select previous order which can be retrieved at (**http://localhost:3500/orders/:telephone**) 
 
-**2. **When a selection is finished, he gets an option to go the checkout. The checkout should also be available in the cart 
+**2.** When a selection is finished, he gets an option to go the checkout. The checkout should also be available in the cart
 
-**3.** In the first step of checkout the user needs to decides if he wants to arrange a store-pickup or have it delivered 
+**3.** In the first step of checkout the user needs to decides if he wants to arrange a store-pickup or have it delivered
 
-**4. **If he decides to have it delivered, the next step will be to input the following information: **name, address, city, telephone** and **postal code**
+**4.** If he decides to have it delivered, the next step will be to input the following information: **name, address, city, telephone** and **postal code**
 
 **5.**  If he decides to arrange a store-pickup, the next step will be to input only the **name** and **telephone** 
 
@@ -66,5 +66,5 @@ All the functionality in the assignment is enlisted here below: 
 
 **9.** Forms should be properly validated 
 
-- **(5%)** Components which receive props should be **PropTypes** set 
-- **(5%)** All **PropTypes** should be documented
+**(5%)** Components which receive props should be **PropTypes** set 
+**(5%)** All **PropTypes** should be documented
