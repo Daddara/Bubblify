@@ -21,23 +21,21 @@ A major catastrophe has just happened! All the key players in the bubble industr
 
 All the functionality in the assignment is enlisted here below: 
 
-- **(10%)** Implement a site where you can look at all the available bubble products (e.g. **http://**
-
-  **localhost:3000/bubbles**) 
+- **(10%)** Implement a site where you can look at all the available bubble products (e.g. http://localhost:3000/bubbles)
 
 - **(10%)** All bubble products contain a link to a detailed page for each product, where extra
 
-  information is provided (e.g. **http://localhost:3000/bubbles/1**) 
+  information is provided (e.g. http://localhost:3000/bubbles/1)
 
 - **(10%)** Implement a site where you can look at different bundle products (e.g. **http://**
 
   **localhost:3000/bundles**). Bundle products are combined of two or more products 
 
-- **(10%)** Implement a site where you can look at information on the place **Bubblify** (e.g.
+**(10%)** Implement a site where you can look at information on the place **Bubblify** (e.g.
 
-  **http://localhost:3000/about**) 
+  http://localhost:3000/about)
 
-- **(10%)** Implement a site where you can look at all the products you have added to the cart. Cart items should be stored either in **localStorage** or cookie and retrieved when the user comes back (e.g. **http://localhost:3000/cart**) 
+- **(10%)** Implement a site where you can look at all the products you have added to the cart. Cart items should be stored either in **localStorage** or cookie and retrieved when the user comes back (e.g. http://localhost:3000/cart)
 
 - **(5%)** The navigation bar should contain a logo (*you can use any image you find suitable*) and four links
 
@@ -46,9 +44,9 @@ All the functionality in the assignment is enlisted here below: 
   - About us 
   - Cart 
 
-• **(35%)** A user needs to go through the following steps when buying products:  
+- **(35%)** A user needs to go through the following steps when buying products:  
 
-**1.** Select one or more products from the product section or select previous order which can be retrieved at (**http://localhost:3500/orders/:telephone**) 
+**1.** Select one or more products from the product section or select previous order which can be retrieved at (http://localhost:3500/orders/:telephone)
 
 **2.** When a selection is finished, he gets an option to go the checkout. The checkout should also be available in the cart
 
@@ -66,5 +64,5 @@ All the functionality in the assignment is enlisted here below: 
 
 **9.** Forms should be properly validated 
 
-**(5%)** Components which receive props should be **PropTypes** set 
-**(5%)** All **PropTypes** should be documented
+- **(5%)** Components which receive props should be **PropTypes** set 
+- **(5%)** All **PropTypes** should be documented
